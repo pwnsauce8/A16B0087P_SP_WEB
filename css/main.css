@@ -1,0 +1,417 @@
+* {
+	box-sizing: border-box;
+}
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+/**	
+ * Обводит красным для "правильно" заполненных полей
+ */
+ body input:focus:required:invalid,
+ body textarea:focus:required:invalid {
+ 	border: red 2px solid;	
+ }
+/**	
+ * Обводит зеленым для "неправильно" заполненных полей
+ */
+ body input:required:valid,
+ body textarea:required:valid {
+ 	box-shadow: 0 0 5px green;
+
+ }
+ body {
+ 	font-family: "RobotoRegular", sans-serif;
+ 	font-size: 16px;
+ }
+ .header_topline {
+ 	background-color: #43484C;
+ 	padding: 15px 0;
+ 	color: #fff;
+ }
+ .footer_line {
+ 	background-color: #43484C;
+ 	color: #fff;
+ }
+ .header_topline a {
+ 	color: #fff;
+ }
+ .top_links {
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	z-index: 10;
+ }
+ .top_links a {
+ 	text-decoration: underline;
+ }
+ .top_links a:hover {
+ 	text-decoration: none;
+ }
+ .soc_buttons {
+ 	float: right;
+ 	font-size: 25px;
+ 	margin-left: 8px;
+ }
+ .auth_buttons,
+ .main_mnu_button {
+ 	background-color: transparent;
+ 	border: medium none;
+ 	font-size: 25px;
+ }
+ .main_mnu_button {
+ 	color: #fff;
+ 	padding: 10px 18px 0;
+ }
+
+.btn {
+	background-color: #2bc6a4;
+	border: medium none;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+ .logo{
+ 	display: block;
+ 	padding: 15px 0;
+ 	color: #fff;
+ 	font-family: "NautilusPompiliusRegular" ;
+ 	font-size: 42px;
+ 	padding: 15px 0;
+ 	text-align: center;
+ }
+ .top_header {
+ 	background-color: #4AAAD2;
+ }
+
+ .main_mnu {
+ 	background-color: #3797bf;
+ 	color: #fff;
+ 	margin-bottom: 20px;
+ }
+ .main_mnu a {
+ 	color: #fff;
+ 	padding: 15px 20px;
+ 	display: block;
+ 	-webkit-transition: all .25s;
+ 	-o-transition: all .25s;
+ 	transition: all .25s;
+ 	font-size: 19px;
+ 	font-family: "RobotoCondensedLight";
+ 	text-transform: uppercase;
+
+ }
+ .main_mnu a:hover {
+ 	background-color: #2787af;
+ }
+ .main_mnu ul{
+ 	margin: 0;
+ 	padding: 0;
+ 	list-style-type: none;
+ 	float: left; 
+ }
+ .top_contacts {
+ 	float: right;
+ 	padding: 5px 20px;
+ 	font-size: 32px;
+ 	font-family: "RobotoCondensedLight";
+
+ }
+ .main_mnu ul li{
+ 	display: inline-block;
+ }
+ .main_mnu ul{
+ 	z-index: 12;
+ }
+ h1	{
+ 	color: #fff;
+ 	text-transform: uppercase;
+ 	text-align: center;
+ 	font-family: "RobotoCondensedLight";
+ }
+ .slider_container img {
+ 	max-width: 100%;
+
+ }
+ .slider_container{
+ 	position: relative;
+ }
+ .next_button, .prev_button {
+ 	color: #fff;
+ 	font-size: 46px;
+ 	position: absolute;
+ 	z-index: 10;
+ 	top: 40%;
+ 	cursor: pointer;
+ 	background-color: rgb(255, 255, 255, 0.5);
+ 	padding: 0 25px;
+ }
+ .next_button{
+ 	right: 20px;
+ }
+ .prev_button{
+ 	left: 20px;
+ }
+ section.order {
+ 	background: #eee;
+ 	padding: 25px 0;
+ 	border-radius: 5px;
+ }
+ .sel_descr{
+ 	font-size: 22px;
+ 	padding-top: 5px;
+ }
+ .btn {
+ 	background-color: #2bc6a4;
+ 	border: medium none;
+ 	border-radius: 5px;
+ 	color: #fff;
+ 	display: block;
+ 	padding: 10px 20px;
+ 	text-transform: uppercase;
+ 	text-align: center;
+ }
+ .sel_descr.button {
+ 	background-color: #2bc6a4;
+ 	border: medium none;
+ 	border-radius: 5px;
+ 	color: #fff;
+ 	display: block;
+ 	padding: 10px 20px;
+ 	text-transform: uppercase;
+ 	text-align: center;
+ 	width: 112px;
+ }
+ .button:hover {
+ 	background-color: #4FEAC8;
+ }
+ .button:active {
+ 	background-color: #14AF8D;
+ }
+
+ .button [name="button1"] {
+ 	margin-top: 25px;
+ }
+ .sell_right .button{
+ 	float: right;
+ }
+ .content {
+ 	vertical-align: middle;
+ 	padding: 15px;
+ 	padding-left: 118px;
+ 	padding-right: 99px;
+ }
+ .modry {
+ 	font-size: 20px;
+ 	font-family: "RobotoCondensedLight";
+ 	color: #004DFF;
+ }
+ .main_content {
+ 	padding: 15px 20px;
+ 	padding-bottom: 96px;
+ }
+ .main_content label, .main_content input, .main_content textarea {
+ 	width: 87%;
+ 	display: block;
+ 	padding: 3px;
+ }
+
+ .text {
+	 margin-top: 30px;
+ }
+
+ #org {
+ 	margin-bottom: 8px;
+ }
+ #hidden label,#hidden input {
+ 	width: 100%;
+ 	display: block;
+ 	padding: 3px;
+ }
+/**#hidden button {
+	width: 100%;
+	background-color: #2bc6a4;
+	padding: 5px;
+	margin: 12px 0px 0px;
+	border-radius: 5px;
+	color: white;
+}
+#hidden button:hover {
+	background-color: #4FEAC8;
+	color: #fff;
+	} **/
+	span {
+		color: red;
+	}
+	.novy {
+		color: #43484C;
+		text-align: left;
+		font-size: 32px;
+		margin-bottom: 9px;
+	}
+	#hidden {
+		display: none;
+	}
+	.code_img {
+		max-width: 60%;
+		margin-bottom: 0;
+	}
+	.linka {
+		height: 4px;
+		background-color: #43484C;
+	}
+
+/**
+ * ===============================================================================
+ * Menu pro uzivatele
+ */
+
+ #menu {
+ 	margin: 0;
+ 	padding: 0;
+ 	width: 100%;
+ 	background: #eee;
+ 	display: table;
+ }
+ #menu li {
+ 	display: block;
+ 	float: left;
+ 	position: relative;
+ }
+ #menu li a, #uz li p {
+ 	display: table;
+ 	padding: 0 20px;
+ 	height: 30px;
+ 	text-align: center;
+ 	font-family: sans-serif;
+ 	line-height: 49px;
+ 	color: #333;
+ 	border-right: 1px solid #c9c7c7;
+ 	text-decoration: none;
+ 	transition: .5s;
+ }
+ .sub-menu {
+ 	visibility: hidden;
+ 	opacity: 0; /*prozrachnost*/
+ 	position: absolute;
+ 	z-index: -1;
+ 	transition: .3s;
+ }
+ #menu .sub-menu li {
+ 	float: none;
+ }
+
+ #menu .sub-menu li a {
+ 	width: auto;
+ 	min-width: 100%;
+ 	padding: 0 11px;
+ 	white-space: nowrap;
+ 	text-align: left;
+ 	box-shadow: none;
+ 	border: none;
+ 	border-bottom: 1px solid #ddd;
+ }
+ #menu li:hover a {
+ 	background: #aaa;
+ 	box-shadow: 0 0 5px rgba(0, 0, 0, .3) insert;
+ }
+ #menu li:hover .sub-menu a {
+ 	background: #eee;
+ 	color: #666;
+ 	height: 40px;
+ 	line-height: 40px;
+ }
+ #menu li:hover .sub-menu a:hover {
+ 	color: #000;
+ }
+ #menu li a:hover + .sub-menu,
+ .sub-menu:hover {
+ 	margin: 0;
+ 	padding: 0;
+ 	display: block;
+ }
+
+ #menu li:hover > ul {
+ 	visibility: visible;
+ 	opacity: 1;
+ 	z-index: 1;
+ }
+
+ .auth {
+ 	float: right;
+ 	color: white;
+ 	margin-right: 193px;
+ 	margin-top: 13px;
+ }
+
+ /**
+ * ===============================================================================
+ * Table "Seznam přispěvků"
+ */
+
+table, .tr-baqh  {
+ 	font-family: Sans-Serif;
+ 	table-layout: fixed;
+ 	text-align: left;
+ 	border-collapse: separate;
+ 	border-spacing: 5px;
+ 	background: #fff;
+ 	color: #656665;
+ 	border-radius: 20px;
+ }
+
+ th {
+ 	font-size: 18px;
+ 	padding: 10px;
+ 	text-transform: uppercase;
+ 	overflow:hidden;
+    word-break:normal;
+ }
+ td{
+ 	background: #fff;
+ 	padding: 10px;
+ }
+/**
+ * ===============================================================================
+ * Tabulka Admina
+ */
+
+ .tg  {
+ 	border-collapse:collapse;
+ 	border-spacing:0;
+ 	border-color:#ccc;
+ }
+ .tg td{font-family:Arial, sans-serif;
+ 	font-size:14px;
+ 	padding:10px 14px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+ .tg .tg-baqh{text-align:center;vertical-align: middle;}
+ .tg .tg-yw4l{vertical-align:top}
+
+/**
+ * ===============================================================================
+ * Hlasovani
+ */
+ .votes {
+ 	border-radius: 5px;
+ 	background-color: #eee;
+ }
+ .vote {
+ 	margin: 8px 0 0 25px;
+ 	padding-bottom: 25px;
+ }
+
