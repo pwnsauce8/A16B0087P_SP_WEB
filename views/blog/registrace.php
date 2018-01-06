@@ -25,15 +25,20 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <div class="form-group">
                                                 <div class="novy">Registrace.</div>
                                             </div>
+                                            <?php if ($result): ?>
+                                            <p style="color: green;">Děkujeme za registraci</p>
+
+                                            <?php else: ?><div class="input-group">
+                                            <?php if (isset($errors) && is_array($errors)): ?>
+                                                    <?php foreach ($errors as $error): ?>
+
+                                                        <span class="text-danger"><?php echo $error?></span>
+
+                                                    <?php endforeach; ?>
+                                            <?php endif; ?></div>
 
                                             <div class="form-group">
                                                 <hr>
-                                            </div>
-
-                                            <div class="input-group">
-                                                <span class="text-danger"></span>
-                                                <span class="text-danger"></span>
-                                                <span class="text-danger"></span>
                                             </div>
 
                                             <div class="form-group">
@@ -63,7 +68,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn" name="sumbit">Registrace</button>
+                                                <button type="submit" class="btn" name="submit">Registrace</button>
                                             </div>
 
                                             <div class="form-group">
@@ -90,6 +95,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                 </aside>
             </div>
         </div>
+        <?php  endif;?>
     </section>
 
 

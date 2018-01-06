@@ -17,12 +17,19 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div id="login-form">
                                     <form method="post" action="#" autocomplete="off">
-
                                         <div class="col-md-12">
 
                                             <div class="form-group">
                                                 <div class="novy">Avtorizace.</div>
                                             </div>
+
+                                            <?php if (isset($errors) && is_array($errors)): ?>
+                                                <ul style="margin-left: 0; padding-left: 0;">
+                                                    <?php foreach ($errors as $error): ?>
+                                                        <li style="color: red; list-style-type: none; "> <?php echo $error?></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            <?php endif; ?>
 
                                             <div class="form-group">
                                                 <hr>
@@ -34,15 +41,13 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                     <label for="email">Email: <span>***</span></label>
                                                     <input type="email" name="email" class="form-control" placeholder=" Zadejte Email" value="" maxlength="40">
                                                 </div>
-                                                <span class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                                                     <label for="password">Heslo: <span>***</span></label>
-                                                    <input type="password" name="pass" class="form-control" placeholder=" Zadejte Heslo" maxlength="15">
+                                                    <input type="password" name="password" class="form-control" placeholder=" Zadejte Heslo" maxlength="15">
                                                 </div>
-                                                <span class="text-danger"></span>
                                             </div>
 
                                             <div class="form-group">
@@ -50,7 +55,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn" name="btn-login">Sign In</button>
+                                                <button type="submit" class="btn" name="submit">Autorizace</button>
                                             </div>
 
                                             <div class="form-group">

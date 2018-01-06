@@ -9,12 +9,22 @@
 
 return array(
 
-    'login' => 'login/index',           // actionIndex v LoginController
-    'registrace' => 'registrace/index', // actionIndex v RegistraceController
+    'login' => 'user/login',           // actionIndex v LoginController
+    'user/logout' => 'user/logout',
+    'registrace' => 'user/register',    // actionIndex v RegistraceController
+
+
     'konf' => 'konf/index',             // actionIndex v KonfController
     'temata' => 'temata/index',         // actionIndex v TemataController
     'misto' => 'misto/index',           // actionIndex v MistoController
     'sponsori' => 'sponsori/index',     // actionIndex v SponsoriController
+
+
+    'novy' => 'novy/index',
+    'seznam' => 'seznam/index',
+    'posouzeni' => 'posouzeni/index',
+
+    'home' => 'home/index',
 
 
     '' => 'site/index',                 // actionIndex v SiteController

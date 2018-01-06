@@ -26,9 +26,15 @@
                     <button class="auth_buttons hidden-md hidden-lg hidden-sm"><i class="fa fa-user" aria-hidden="true"></i></button>
 
                     <div class="top_links">
-                        <!--<a href="#hidden" class="button1 fancybox">Login</a> / -->
-                        <a href="/login">Login</a> /
-                        <a href="/registrace">Registrace</a>
+
+                        <?php if (User::isGuest()): ?>
+<!--                            Uživatel: <a href="#">--><?php //echo $user['username'];?><!--</a> |-->
+                            <a href="/user/logout/">Odhlasit</a>
+                        <?php else: ?>
+                            <a href="/login">Login</a> /
+                            <a href="/registrace">Registrace</a>
+                        <?php endif; ?>
+
                     </div>
                     <div class="soc_buttons">
                         <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -43,7 +49,14 @@
     <div class="container">
         <div class="col-md-12">
             <div class="row">
+
+                <?php if (User::isGuest()): ?>
+                <a href="/home" class="logo">Konference</a>
+                <?php else: ?>
                 <a href="/" class="logo">Konference</a>
+                <?php endif; ?>
+
+
                 <nav class="main_mnu clearfix">
                     <button class="main_mnu_button hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
                     <ul>
@@ -58,3 +71,30 @@
         </div>
     </div>
 </header>
+
+<?php if (User::isGuest()): ?>
+
+<nav class="mnu_user clearfix">
+    <ul id="menu">
+        <li>
+            <a href="/seznam">Seznam přispěvku</a>
+            <ul class="sub-menu">
+                <li><a href="#">Zobrazí celý seznam přispěvků</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/novy">Novy přispěvek</a>
+            <ul class="sub-menu">
+                <li><a href="#">Napsát nový přispěvek</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/posouzeni">Seznam přispěvku k posouzení</a>
+            <ul class="sub-menu">
+                <li><a href="#">Zobrazit přispěvky k posouzení</a></li>
+            </ul>
+        </li>
+        <li><a href="/user/logout/"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Odhlasit</a></li>
+    </ul>
+</nav>
+<?php endif; ?>

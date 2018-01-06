@@ -7,12 +7,16 @@
  * Osobní číslo : A16B0087P
  */
 
-class LoginController
+class HomeController
 {
     public function actionIndex()
     {
 
-        require_once(ROOT . '/views/blog/login.php');
+        $userId = User::checkLogged();
+
+        $user = User::getUserById($userId);
+
+        require_once(ROOT . '/views/user/home.php');
 
         return true;
     }

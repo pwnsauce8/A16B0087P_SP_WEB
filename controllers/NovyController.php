@@ -7,12 +7,13 @@
  * Osobní číslo : A16B0087P
  */
 
-class RegistraceController
+class NovyController
 {
+
     public function actionIndex()
     {
 
-        require_once(ROOT . '/views/blog/registrace.php');
+        require_once(ROOT . '/views/user/novy_pr.php');
 
         return true;
     }
