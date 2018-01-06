@@ -1,44 +1,12 @@
 <?php
 /**
- * Hlávní stranka
+ *
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
- * Date         : 02.01.2018
+ * Date         : 06.01.2018
  * Osobní číslo : A16B0087P
  */
-?>
-<header class="top_header">
-<div class="container">
-    <div class="col-md-12">
-        <div class="row">
-            <h1>Duis aute irure:</h1>
-            <div class="slider_container">
-                <div class="next_button"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                <div class="prev_button"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-                <div class="carousel">
-                    <div class="slider_item"><img src="http://gtrk-saratov.ru/images/cms/data/2016/February/1502/konferenciya.jpg" alt=""></div>
-                    <div class="slider_item"><img src="http://www.imisp.ru/images/interior/aud1-2-800.jpg" alt=""></div>
-                    <div class="slider_item"><img src="http://ic.pics.livejournal.com/kids/49738708/1108349/1108349_original.jpg" alt=""></div>
-                    <div class="slider_item"><img src="http://www.vestiturkey.com/d/news/8322.jpg" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</header>
-
-<section class="order">
-    <div class="container">
-        <div class="col-md-7">
-            <div class="sel_descr">Přihlášní do systému</div>
-        </div>
-        <div class="col-md-5">
-            <div class="sell_right">
-                <a href="#hidden" class="btn fancybox">Login</a>
-            </div>
-        </div>
-    </div>
-</section>
+include ROOT . '/views/layouts/header.php'; ?>
 
 <section class="main_content">
     <div class="container">
@@ -85,3 +53,7 @@
         </div>
     </div>
 </section>
+
+
+
+<?php include ROOT . '/views/layouts/footer.php'; ?>
