@@ -9,24 +9,38 @@
 
 return array(
 
-    'login' => 'user/login',           // actionIndex v LoginController
+    // Autorizace
+    'login' => 'user/login',            // actionIndex v LoginController
     'user/logout' => 'user/logout',
     'registrace' => 'user/register',    // actionIndex v RegistraceController
+    'editprofile' => 'user/editprofile',
+
+    // Hlavni stranky
+    'konf' => 'site/konf',             // actionIndex v KonfController
+    'temata' => 'site/temata',         // actionIndex v TemataController
+    'misto' => 'site/misto',           // actionIndex v MistoController
+    'sponsori' => 'site/sponsori',     // actionIndex v SponsoriController ......
 
 
-    'konf' => 'konf/index',             // actionIndex v KonfController
-    'temata' => 'temata/index',         // actionIndex v TemataController
-    'misto' => 'misto/index',           // actionIndex v MistoController
-    'sponsori' => 'sponsori/index',     // actionIndex v SponsoriController
-
-
-    'novy' => 'novy/index',
+    // Uzivatel
+    'novy' => 'seznam/add',
+    'seznam/update/([0-9]+)' => 'seznam/update/$1', // actionUpdate v SeznamController
+    'seznam/delete/([0-9]+)' => 'seznam/delete/$1', // actionDelete v SeznamController
     'seznam' => 'seznam/index',
     'posouzeni' => 'posouzeni/index',
 
-    'home' => 'home/index',
+
+    // Admin
+    'admin' => 'admin/index',
+    'admsez' => 'adminseznam/index',
+    'novyadmin' => 'novyadmin/index',
+    'download/([0-9]+)' => 'admin/download/$1',
+    'userban' => 'admin/usersban',
+    'banuser/([0-9]+)' => 'admin/ban/$1',
+
+    'home' => 'site/home',
 
 
-    '' => 'site/index',                 // actionIndex v SiteController
+    '' => 'site/login',                 // actionIndex v SiteController
 
 );

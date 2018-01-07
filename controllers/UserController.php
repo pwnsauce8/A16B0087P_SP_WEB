@@ -96,6 +96,7 @@ class UserController
         return true;
     }
 
+
     public function actionLogout()
     {
 
@@ -104,5 +105,58 @@ class UserController
 
         // Перенаправляем пользователя на главную страницу
         header("Location: /");
+    }
+
+    public function actionEditprofile()
+    {
+        $userId = User::checkLogged();
+
+        // Обработка формы
+        if (isset($_POST['submit'])) {
+            // Если форма отправлена
+            // Получаем данные из формы редактирования. При необходимости можно валидировать значения
+            $options['name'] = $_POST['name'];
+            $options['email'] = $_POST['email'];
+            $options['password'] = $_POST['password'];
+            $options['jmeno'] = $_POST['jmeno'];
+            $options['organizace'] = $_POST['organizace'];
+
+            // znicime html tagy
+
+
+            $options['name']  = strip_tags($options['name']);
+            $options['email'] = strip_tags($options['email']);
+            $options['jmeno'] = strip_tags($options['jmeno']);
+            $options['organizace']  = strip_tags($options['organizace']);
+
+            $options['name']  = htmlspecialchars($options['name']);
+            $options['email'] = htmlspecialchars($options['email']);
+            $options['jmeno'] = htmlspecialchars($options['jmeno']);
+            $options['organizace']  = htmlspecialchars($options['organizace']);
+
+            // Chyby
+            $errors = false;
+
+            // Kontrola dat
+            if (!User::checkName($options['name'])) {
+                $errors[] = 'Jméno musí být délší, než 2 symboly';
+            }
+
+            if (!User::checkPassword($options['password'])) {
+                $errors[] = 'Heslo musí být délší, než 6 symboly';
+            }
+
+            if ($errors == false) {
+                $options['password']  = md5($options['password']);
+                // Pokud nevyskytly chyby -> registrace
+                $result = User::updateUserById($userId, $options);
+            }
+
+
+        }
+
+        // Подключаем вид
+        require_once(ROOT . '/views/user/editprofile.php');
+        return true;
     }
 }

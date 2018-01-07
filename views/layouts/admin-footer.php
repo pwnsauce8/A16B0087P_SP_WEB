@@ -1,3 +1,12 @@
+<?php
+/**
+ *
+ * Semistrální práce z WEB 2017
+ * Author       : Mukanova Zhanel
+ * Date         : 07.01.2018
+ * Osobní číslo : A16B0087P
+ */
+?>
 <footer>
     <div class="footer_line">
         <div class="container">
@@ -15,18 +24,18 @@
 </footer>
 
 <div id="hidden">
-    <form method="post" action="#" autocomplete="off">
+    <form method="POST" action="testreg.php" class="login">
         <h3 style="text-align: center;">Příhlašení do systému</h3>
 
-        <label for="email">Email:</label>
-        <input type="text" name="email"required placeholder=" Email">
+        <label for="username">Login:</label>
+        <input type="text" name="login"required placeholder=" Login">
 
         <label for="password">Heslo:</label>
         <input style="margin-bottom: 9px;" type="password" name="password"required placeholder=" Zadejte heslo">
 
-        <button style="margin: auto;" type="sumbit" name="submit" class="btn">Vchod</button>
+        <button style="margin: auto;" type="sumbit" name="sumbit" class="btn">Vchod</button>
 
-        <a style="margin-left: 53px;" href="/registrace">Registrace</a>
+        <a style="margin-left: 53px;" href="registrace.php">Registrace</a>
     </form>
 </div>
 <script src="/template/libs/jquery/jquery-1.11.1.min.js"></script>

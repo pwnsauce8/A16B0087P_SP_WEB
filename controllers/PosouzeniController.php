@@ -11,7 +11,7 @@ class PosouzeniController
 {
     public function actionIndex()
     {
-
+        User::checkBan();
         require_once(ROOT . '/views/user/seznam_k_pos.php');
 
         return true;

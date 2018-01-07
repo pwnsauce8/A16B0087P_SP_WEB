@@ -3,10 +3,10 @@
  *
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
- * Date         : 06.01.2018
+ * Date         : 07.01.2018
  * Osobní číslo : A16B0087P
  */
-include ROOT . '/views/layouts/header.php'; ?>
+include ROOT . '/views/layouts/admin-header.php'; ?>
 
 
     <section class="main_content">
@@ -34,17 +34,30 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             </thead>
                                             <tbody>
                                             <?php foreach ($list as $posts): ?>
-                                            <tr>
-                                                <td data-label="Date"><?php echo $posts['date']; ?></td>
-                                                <td data-label="Nazev"><?php echo $posts['name']; ?></td>
-                                                <td data-label="Autori"><?php echo $posts['autors']; ?></td>
-                                                <td data-label="Vymazat"><a href="seznam/delete/<?php echo $posts['idpost']; ?>"><i
-                                                                class="fa fa-times" aria-hidden="true"></i> Vymazat</a>
-                                                </td>
-                                                <td data-label="Editovat"><a href="seznam/update/<?php echo $posts['idpost']; ?>"><i
-                                                                class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        Upravit</a></td>
-                                            </tr>
+                                                <tr>
+                                                    <td data-label="Date"><?php echo $posts['date']; ?></td>
+                                                    <td data-label="Nazev"><?php echo $posts['name']; ?></td>
+                                                    <td data-label="Autori"><?php echo $posts['autors']; ?></td>
+                                                    <td data-label="Vymazat"><a href="seznam/delete/<?php echo $posts['idpost']; ?>"><i
+                                                                    class="fa fa-times" aria-hidden="true"></i> Vymazat</a>
+                                                    </td>
+<!--                                                    <td data-label="Posouzeni">-->
+<!--                                                        <select>-->
+<!--                                                            --><?php //if (is_array($userList)): ?>
+<!--                                                            --><?php //foreach ($userList as $user): ?>
+<!--                                                            <option id="--><?php //echo $user['idusers'];?><!--">--><?php //echo $user['username']; ?><!--</option>-->
+<!--                                                            --><?php //endforeach; ?>
+<!--                                                            --><?php //endif; ?>
+<!--                                                        </select>-->
+<!--                                                    </td>-->
+<!--                                                    <td data-label="Vymazat"><a href="#"><i class="fa fa-share" aria-hidden="true"></i></a>-->
+<!--                                                    </td>-->
+
+                                                    </td>
+                                                    <td data-label="Download"><a href="download/<?php echo $posts['idpost']; ?>"><i class="fa fa-download" aria-hidden="true"></i></i></a>
+                                                    </td>
+
+                                                </tr>
                                             <?php endforeach; ?>
                                             </tbody>
                                         </table>
@@ -69,4 +82,4 @@ include ROOT . '/views/layouts/header.php'; ?>
     </section>
 
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/admin-footer.php'; ?>

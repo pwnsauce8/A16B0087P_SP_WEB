@@ -2,7 +2,7 @@
 
 return array(
     'host' => 'localhost',
-    'dbname' => 'web',
+    'dbname' => 'mydb',
     'user' => 'root',
     'password' => '123',
 );

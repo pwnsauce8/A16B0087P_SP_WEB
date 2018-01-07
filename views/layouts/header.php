@@ -94,6 +94,12 @@
                 <li><a href="#">Zobrazit přispěvky k posouzení</a></li>
             </ul>
         </li>
+        <li>
+            <a href="/editprofile">Můj profil</a>
+            <ul class="sub-menu">
+                <li><a href="#">Zobrazit přispěvky k posouzení</a></li>
+            </ul>
+        </li>
         <li><a href="/user/logout/"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Odhlasit</a></li>
     </ul>
 </nav>

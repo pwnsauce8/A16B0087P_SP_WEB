@@ -3,7 +3,7 @@
  *
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
- * Date         : 06.01.2018
+ * Date         : 07.01.2018
  * Osobní číslo : A16B0087P
  */
 include ROOT . '/views/layouts/header.php'; ?>
@@ -17,7 +17,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div class="col-md-12">
                                     <section class="login">
-                                        <div class="novy">Nový přispěvek</div>
+                                        <div class="novy">Změna příspěvku: <span><?php
+                                                $post = Articles::getPostById($id);
+                                                echo $post['name']; ?> </span></div>
 
                                         <?php if (isset($errors) && is_array($errors)): ?>
                                             <ul style="margin-left: 0; padding-left: 0;">
@@ -37,33 +39,33 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                 <div class="input-group">
                                                     <label for="nazev">Název přispěvku: <span>***</span></label>
                                                     <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
+                                                            class="glyphicon glyphicon-user"></span></span>
                                                     <input type="text" name="nazev" class="form-control"
-                                                           placeholder=" Název přispěvku" maxlength="50" value=""/>
+                                                           value=" <?php echo $post['name']; ?>" maxlength="50" value=""/>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <label for="autori">Autoři: <span>***</span></label>
                                                     <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
+                                                            class="glyphicon glyphicon-user"></span></span>
                                                     <input type="text" name="autori" class="form-control"
-                                                           placeholder=" Autoři přispěvku" maxlength="200" value=""/>
+                                                           value=" <?php echo $post['autors']; ?>" maxlength="200" value=""/>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <label for="abstract">Abstract: <span>***</span></label>
                                                     <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
-                                                    <textarea name="abstract" rows="8"> Max. 1500 symbolů</textarea>
+                                                            class="glyphicon glyphicon-user"></span></span>
+                                                    <textarea name="abstract" rows="8"> <?php echo $post['abstract']; ?></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <label>PDF soubor:<br></label>
                                                     <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
+                                                            class="glyphicon glyphicon-user"></span></span>
                                                     <input style="margin-bottom: 9px;" type="FILE" name="fupload"
                                                            class="form-control" value=""/>
                                                 </div>

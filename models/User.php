@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Funkce pro praci s uzivatelem
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 06.01.2018
@@ -9,9 +9,13 @@
 
 class User
 {
-/** ===================================REGISTRACE================================= */
+//  ___   ____  __    _   __  _____  ___    __    __    ____
+// | |_) | |_  / /`_ | | ( (`  | |  | |_)  / /\  / /`  | |_
+// |_| \ |_|__ \_\_/ |_| _)_)  |_|  |_| \ /_/--\ \_\_, |_|__
+
     /**
-     * @param $name      jmeno
+     * Regestruje uzivatele
+     * @param $name      jmeno uzivatele
      * @param $email     email
      * @param $password  heslo
      * @return bool      pokud vsechno spravne -> uzivatel zaregistrovan
@@ -79,17 +83,23 @@ class User
         return false;
     }
 
-/** ===================================AUTORIZACE================================= */
+//    __    _     _____ ___   ___   _  ____   __    __    ____
+//   / /\  | |  | | |  / / \ | |_) | |  / /  / /\  / /`  | |_
+//  /_/--\ \_\_/  |_|  \_\_/ |_| \ |_| /_/_ /_/--\ \_\_, |_|__
 
+    /**
+     * Kontroluje data o uzivateli
+     * @param $email     email uzivatele
+     * @param $password  heslo uzivatele
+     * @return bool      Pokud existuje uzivatel vratime jeho id jinak false
+     */
     public static function checkUserData($email, $password)
     {
-        // Соединение с БД
+        // Pripojeni k DB
         $db = Db::getConnection();
 
-        // Текст запроса к БД
+        // SQL dotaz
         $sql = 'SELECT * FROM users WHERE email = :email AND password = :password';
-
-        // Получение результатов. Используется подготовленный запрос
 
         $result = $db->prepare($sql);
         $result->execute(array(
@@ -97,19 +107,21 @@ class User
             ":password" => $password
         ));
 
-        // Обращаемся к записи
         $user = $result->fetch();
 
         if ($user) {
-            // Если запись существует, возвращаем id пользователя
+            // Pokud existuje uzivatel vratime jeho id
             return $user['idusers'];
         }
         return false;
     }
 
+    /**
+     * Zapisujeme id uzivatele v SESSION
+     * @param $userId id uzivatele
+     */
     public static function auth($userId)
     {
-        // Записываем идентификатор пользователя в сессию
         $_SESSION['user'] = $userId;
     }
 
@@ -117,6 +129,10 @@ class User
 /** ============================================================================== */
 
 
+    /**
+     * Kontrolujeme zda je uzivatel zaregestrovan
+     * @return bool true/false
+     */
     public static function isGuest()
     {
         if (isset($_SESSION['user'])) {
@@ -125,33 +141,132 @@ class User
         return false;
     }
 
+    /**
+     * @return pokud existuje SESSION vratime id uzivatele
+     */
     public static function checkLogged()
     {
-        // Если сессия есть, вернем идентификатор пользователя
         if (isset($_SESSION['user'])) {
             return $_SESSION['user'];
         }
-
+        // jinak na stranku s autorizaci
         header("Location: /login");
     }
 
+    /**
+     * Vrati vsechnu informace ob uzivateli
+     * @param $id     id uzivatele
+     * @return mixed  vsechna informace
+     */
     public static function getUserById($id)
     {
-        // Соединение с БД
+        // Pripojeni k DB
         $db = Db::getConnection();
 
-        // Текст запроса к БД
+        // SQL dotaz
         $sql = 'SELECT * FROM users WHERE idusers = :id';
 
-        // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
 
-        // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
 
         return $result->fetch();
+    }
+
+    /**
+     * Vrati seznam vsech uzivatelu
+     * @return array pole uzivatelu
+     */
+    public static function getUsersList()
+    {
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $result = $db->query('SELECT idusers, username FROM users ');
+
+        // Prijem a vraceni vysledku
+        $i = 0;
+        $categoryList = array();
+        while ($row = $result->fetch()) {
+            $categoryList[$i]['idusers'] = $row['idusers'];
+            $categoryList[$i]['username'] = $row['username'];
+            $i++;
+        }
+        return $categoryList;
+    }
+
+    /**
+     * Uprava informace ob uzivateli
+     * @param $id       id uzivatele
+     * @param $options  vsechna nova informace
+     * @return bool
+     */
+    public static function updateUserById($id, $options)
+    {
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $sql = "UPDATE `users` 
+                SET `username`= :name,`password`= :password,`email`= :email,`jmeno`= :jmeno,`organizace`= :organizace 
+                WHERE idusers = :id;";
+
+        // Prijem a vraceni vysledku
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $result->bindParam(':password', $options['password'], PDO::PARAM_STR);
+        $result->bindParam(':email', $options['email'], PDO::PARAM_STR);
+        $result->bindParam(':jmeno', $options['jmeno'], PDO::PARAM_STR);
+        $result->bindParam(':organizace', $options['organizace'], PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    /**
+     * Ban uzivatele
+     * @param $id   id uzivatele
+     * @return bool vysledek
+     */
+    public static function getUserBanById($id)
+    {
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $sql = "UPDATE `users` 
+                SET 
+                WHERE idusers = :id;";
+
+        // Prijem a vraceni vysledku
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $result->bindParam(':password', $options['password'], PDO::PARAM_STR);
+        $result->bindParam(':email', $options['email'], PDO::PARAM_STR);
+        $result->bindParam(':jmeno', $options['jmeno'], PDO::PARAM_STR);
+        $result->bindParam(':organizace', $options['organizace'], PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    /**
+     * Zkomtroluje zda uzivatel ma ban
+     * @return bool
+     */
+    public static function checkBan() {
+
+        $userId = User::checkLogged();
+        $user = User::getUserById($userId);
+
+        if ($user['isBan'] != '1') {
+            return true;
+        }
+        unset($_SESSION["user"]);
+
+        header("Location: /");
+
     }
 
 }
