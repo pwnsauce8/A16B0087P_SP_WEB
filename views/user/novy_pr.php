@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Novy prispevek
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 06.01.2018
@@ -19,12 +19,17 @@ include ROOT . '/views/layouts/header.php'; ?>
                                     <section class="login">
                                         <div class="novy">Nový přispěvek</div>
 
+                                        <?php if ($result): ?>
+                                            <span>Uspěch</span>
+                                        <?php else: ?>
+
                                         <?php if (isset($errors) && is_array($errors)): ?>
                                             <ul style="margin-left: 0; padding-left: 0;">
                                                 <?php foreach ($errors as $error): ?>
                                                     <li style="color: red; list-style-type: none; "> <?php echo $error?></li>
                                                 <?php endforeach; ?>
                                             </ul>
+                                        <?php endif; ?>
                                         <?php endif; ?>
 
                                         <div class="form-group">

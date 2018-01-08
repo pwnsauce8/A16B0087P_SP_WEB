@@ -1,3 +1,11 @@
+/**
+ * Responzivni design
+ * Semistrální práce z WEB 2017
+ * Author       : Mukanova Zhanel
+ * Date         : 06.01.2018
+ * Osobní číslo : A16B0087P
+ */
+
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
@@ -64,7 +72,6 @@
 	}
 /**
  *  Table
- *  ==============================================	
  */
 
 	table {
@@ -144,7 +151,8 @@
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 
-}
+/* Login */
+
 .hidden {
 	display: none;
 }
@@ -184,4 +192,5 @@ table {
 	border-radius: 5px;
 	background-color: #eee;
 	margin-top: 15px;
+}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Seznam cest
+ * Seznam cest ktere existuje na mem webu
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 06.01.2018

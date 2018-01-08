@@ -15,6 +15,7 @@ class Router
 
     public function __construct()
     {
+        // Pripojeni vsech cest
         $routesPath = ROOT . '/config/routes.php';
         $this->routes = include($routesPath);
     }
@@ -31,20 +32,19 @@ class Router
 
     public function run()
     {
-        // Получить строку запроса
+        // Ziskat retezec dotazu
         $uri = $this->getURI();
 
-        // Проверить наличие такого запроса в routes.php
+        // Zkontrolovat zda existuje takovy retezec v routes.php
         foreach ($this->routes as $uriPattern => $path) {
 
-            // Сравниваем $uriPattern и $uri
+            // Porovname $uriPattern a $uri
             if (preg_match("~$uriPattern~", $uri)) {
-                
-                // Получаем внутренний путь из внешнего согласно правилу.
-                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-                                
-                // Определить контроллер, action, параметры
 
+                // Dostaneme vnitrni cestu z vnejsku podle pravidla
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+
+                // Indefikovat controller, action a args
                 $segments = explode('/', $internalRoute);
 
                 $controllerName = array_shift($segments) . 'Controller';
@@ -53,8 +53,8 @@ class Router
                 $actionName = 'action' . ucfirst(array_shift($segments));
                              
                 $parameters = $segments;
-                
-                // Подключить файл класса-контроллера
+
+                // Pripojit soubor tridy-controller
                 $controllerFile = ROOT . '/controllers/' .
                         $controllerName . '.php';
 
@@ -62,7 +62,7 @@ class Router
                     include_once($controllerFile);
                 }
 
-                // Создать объект, вызвать метод (т.е. action)
+                // Zavolat metodu Action
                 $controllerObject = new $controllerName;
                 
 

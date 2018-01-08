@@ -1,3 +1,13 @@
+<?php
+/**
+ * Hlavni stranka pro navstevniky
+ * Semistrální práce z WEB 2017
+ * Author       : Mukanova Zhanel
+ * Date         : 06.01.2018
+ * Osobní číslo : A16B0087P
+ */
+?>
+
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
     <header class="top_header">

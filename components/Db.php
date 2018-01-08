@@ -9,9 +9,12 @@
 
 class Db
 {
-    
+    /**
+     * @return PDO vrati pripojeni
+     */
     public static function getConnection()
     {
+        // Pripojeni config souboru ve kterem jsou data k pripojeni
         $paramsPath = ROOT . '/config/db_params.php';
         $params = include($paramsPath);
         

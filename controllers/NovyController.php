@@ -75,7 +75,7 @@ class NovyController
 //////////////////////////////////////////////////////////////////////////////////////////
             if ($errors == false) {
                 // Pokud nevyskytly chyby -> pridani prispevku
-                $id = Articles::addAbstract($options);
+                $result = Articles::addAbstract($options);
                 header("Location: /seznam");
             }
         }

@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Seznam prispevku uzivatelu
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 06.01.2018

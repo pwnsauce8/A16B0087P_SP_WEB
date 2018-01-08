@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Uprava prispevku
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 07.01.2018
@@ -17,7 +17,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div class="col-md-12">
                                     <section class="login">
-                                        <div class="novy">Změna příspěvku: <span><?php
+                                        <div class="novy">Uprava příspěvku: <span><?php
                                                 $post = Articles::getPostById($id);
                                                 echo $post['name']; ?> </span></div>
 

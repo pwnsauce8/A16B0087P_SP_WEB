@@ -1,3 +1,11 @@
+/**
+ * Styly webu
+ * Semistrální práce z WEB 2017
+ * Author       : Mukanova Zhanel
+ * Date         : 06.01.2018
+ * Osobní číslo : A16B0087P
+ */
+
 * {
 	box-sizing: border-box;
 }
@@ -17,34 +25,51 @@
 	color: #666;
 	opacity: 1;
 }
+
 /**	
- * Обводит красным для "правильно" заполненных полей
+ * Nakresli cerveny obdelnik pro "spatne" vyplnene pole
  */
  body input:focus:required:invalid,
  body textarea:focus:required:invalid {
  	border: red 2px solid;	
  }
 /**	
- * Обводит зеленым для "неправильно" заполненных полей
+ * Nakresli zeleny obdelnik pro "spravne" vyplnene pole
  */
  body input:required:valid,
  body textarea:required:valid {
  	box-shadow: 0 0 5px green;
 
  }
+
+ /**
+  * Styl pro cely block body
+  */
  body {
  	font-family: "RobotoRegular", sans-serif;
  	font-size: 16px;
  }
+
+ /**
+  * Header
+  */
  .header_topline {
  	background-color: #43484C;
  	padding: 15px 0;
  	color: #fff;
  }
+
+/**
+ * Footer
+ */
  .footer_line {
  	background-color: #43484C;
  	color: #fff;
  }
+
+/**
+ * Horni sede menu
+ */
  .header_topline a {
  	color: #fff;
  }
@@ -75,6 +100,9 @@
  	padding: 10px 18px 0;
  }
 
+/**
+ * Vsechny buttons na webu
+ */
 .btn {
 	background-color: #2bc6a4;
 	border: medium none;
@@ -86,6 +114,23 @@
 	text-align: center;
 }
 
+.button:hover {
+	background-color: #4FEAC8;
+}
+.button:active {
+	background-color: #14AF8D;
+}
+
+.button [name="button1"] {
+	margin-top: 25px;
+}
+.sell_right .button{
+	float: right;
+}
+
+/**
+ * KONFERENCE
+ */
  .logo{
  	display: block;
  	padding: 15px 0;
@@ -95,10 +140,18 @@
  	padding: 15px 0;
  	text-align: center;
  }
+
+/**
+ * Header webu
+ */
  .top_header {
  	background-color: #4AAAD2;
  }
 
+
+/**
+ * Horni menu (o konf, sponsori, mislo....)
+ */
  .main_mnu {
  	background-color: #3797bf;
  	color: #fff;
@@ -119,31 +172,42 @@
  .main_mnu a:hover {
  	background-color: #2787af;
  }
+
  .main_mnu ul{
  	margin: 0;
  	padding: 0;
  	list-style-type: none;
  	float: left; 
  }
- .top_contacts {
- 	float: right;
- 	padding: 5px 20px;
- 	font-size: 32px;
- 	font-family: "RobotoCondensedLight";
 
- }
  .main_mnu ul li{
  	display: inline-block;
  }
+
  .main_mnu ul{
  	z-index: 12;
  }
+
+.top_contacts {
+	float: right;
+	padding: 5px 20px;
+	font-size: 32px;
+	font-family: "RobotoCondensedLight";
+}
+
+/**
+ * Nadpis po menu
+ */
  h1	{
  	color: #fff;
  	text-transform: uppercase;
  	text-align: center;
  	font-family: "RobotoCondensedLight";
  }
+
+/**
+ * Slider
+ */
  .slider_container img {
  	max-width: 100%;
 
@@ -167,6 +231,10 @@
  .prev_button{
  	left: 20px;
  }
+
+/**
+ * block ve kterem je tlacitko LOGIN
+ */
  section.order {
  	background: #eee;
  	padding: 25px 0;
@@ -176,51 +244,16 @@
  	font-size: 22px;
  	padding-top: 5px;
  }
- .btn {
- 	background-color: #2bc6a4;
- 	border: medium none;
- 	border-radius: 5px;
- 	color: #fff;
- 	display: block;
- 	padding: 10px 20px;
- 	text-transform: uppercase;
- 	text-align: center;
- }
- .sel_descr.button {
- 	background-color: #2bc6a4;
- 	border: medium none;
- 	border-radius: 5px;
- 	color: #fff;
- 	display: block;
- 	padding: 10px 20px;
- 	text-transform: uppercase;
- 	text-align: center;
- 	width: 112px;
- }
- .button:hover {
- 	background-color: #4FEAC8;
- }
- .button:active {
- 	background-color: #14AF8D;
- }
 
- .button [name="button1"] {
- 	margin-top: 25px;
- }
- .sell_right .button{
- 	float: right;
- }
- .content {
- 	vertical-align: middle;
- 	padding: 15px;
- 	padding-left: 118px;
- 	padding-right: 99px;
- }
  .modry {
  	font-size: 20px;
  	font-family: "RobotoCondensedLight";
  	color: #004DFF;
  }
+
+/**
+ * Hlavni obsah stranky
+ */
  .main_content {
  	padding: 15px 20px;
  	padding-bottom: 96px;
@@ -243,18 +276,7 @@
  	display: block;
  	padding: 3px;
  }
-/**#hidden button {
-	width: 100%;
-	background-color: #2bc6a4;
-	padding: 5px;
-	margin: 12px 0px 0px;
-	border-radius: 5px;
-	color: white;
-}
-#hidden button:hover {
-	background-color: #4FEAC8;
-	color: #fff;
-	} **/
+
 	span {
 		color: red;
 	}
@@ -359,8 +381,7 @@
  	margin-top: 13px;
  }
 
- /**
- * ===============================================================================
+/**
  * Table "Seznam přispěvků"
  */
 
@@ -396,11 +417,25 @@ table, .tr-baqh  {
  	border-spacing:0;
  	border-color:#ccc;
  }
- .tg td{font-family:Arial, sans-serif;
+ .tg td {
+	font-family:Arial, sans-serif;
  	font-size:14px;
- 	padding:10px 14px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
- .tg .tg-baqh{text-align:center;vertical-align: middle;}
- .tg .tg-yw4l{vertical-align:top}
+ 	padding:10px 14px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#ccc;
+	color:#333;
+	background-color:#fff;
+ }
+ .tg .tg-baqh {
+	 text-align:center;
+	 vertical-align: middle;
+ }
+ .tg .tg-yw4l{
+	 vertical-align:top
+ }
 
 /**
  * ===============================================================================

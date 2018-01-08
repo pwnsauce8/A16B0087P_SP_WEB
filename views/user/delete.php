@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Stranka pro smazani prispevku
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 07.01.2018
