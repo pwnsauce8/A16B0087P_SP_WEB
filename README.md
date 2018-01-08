@@ -1,5 +1,6 @@
 # Semistrální práce z WEB 2017 Stranka konference
 ### Mukanova Zhanel | A16B0087P | mukanova@students.zcu.cz
+https://github.com/pwnsauce8/A16B0087P_SP_WEB
 
 
 ## Popis použitých technologií
