@@ -55,13 +55,6 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                     <input type="email" name="email" class="form-control" value="<?php echo $user['email']; ?>" maxlength="40" value="">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="password">Heslo: <span>***</span></label>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                    <input type="password" name="password" class="form-control" placeholder=" Změna hesla" maxlength="15">
-                                                </div>
-                                            </div>
                                             <br>
                                             <div class="form-group">
                                                 <hr>

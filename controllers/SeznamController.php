@@ -1,6 +1,8 @@
 <?php
 /**
- *
+ * Controller Seznam ridi vsemi seznamami,
+ * do kterych ma pristup jakykoliv
+ * uzivatel
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
  * Date         : 06.01.2018
@@ -9,13 +11,19 @@
 
 class SeznamController
 {
+    /**
+     * Seznam vsech prispevku uzivatelu
+     * @return bool
+     */
     public function actionIndex()
     {
+        // Zkontroluje zda uzivatel ma ban
         User::checkBan();
 
-        $db = Db::getConnection();
+        // Zkontroluje zda uzivatel je uzivatelem
         $userId = User::checkLogged();
 
+        // Vrati vsechny prispevky uzivatelem s $userId
         $list = Articles::getArtUserList($userId);
 
         require_once(ROOT . '/views/user/seznam_pr.php');
@@ -23,34 +31,45 @@ class SeznamController
         return true;
     }
 
+    /**
+     * Odstrani zadany prispevek
+     * @param $id   id prispevku, ktery chceme odstranit
+     * @return bool
+     */
     public function actionDelete($id)
     {
+        // Zkontroluje zda uzivatel ma ban
         User::checkBan();
-        // Обработка формы
+
         if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Удаляем товар
+
+            // Pokud vsechno je v poradku -> odstranime prispevek
             Articles::deletePostById($id);
 
-            // Перенаправляем пользователя на страницу управлениями товарами
             header("Location: /seznam");
         }
 
-        // Подключаем вид
         require_once(ROOT . '/views/user/delete.php');
         return true;
     }
 
+    /**
+     * Upravi zadany prispevek
+     * a nastavi nove hosnoty
+     * @param $id    id zadaneho prispevku
+     * @return bool
+     */
     public function actionUpdate($id)
     {
+        // Zkontroluje zda uzivatel ma ban
         User::checkBan();
-        // Получаем данные о конкретном заказе
+        // Vrati informace o prispevku
         $product = Articles::getPostById($id);
 
-        // Обработка формы
+
         if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Получаем данные из формы редактирования. При необходимости можно валидировать значения
+
+            // Pokud vsechno je v poradku -> upravime prispevek
             $options['nazev'] = $_POST['nazev'];
             $options['autori'] = $_POST['autori'];
             $options['abstract'] = $_POST['abstract'];
@@ -65,18 +84,24 @@ class SeznamController
             $options['autori'] = htmlspecialchars($options['autori']);
             $options['abstract'] = htmlspecialchars($options['abstract']);
 
-            // Сохраняем изменения
+            // ulozime zmeny
             $result = Articles::updatePostById($id, $options);
 
         }
 
-        // Подключаем вид
         require_once(ROOT . '/views/user/update.php');
         return true;
     }
 
+    /**
+     * Prida novy prispevek do DB
+     * @return bool
+     */
     public function actionAdd()
     {
+        // Zkontroluje zda uzivatel ma ban
+        User::checkBan();
+
         $nazev = false;
         $autori = false;
         $abstract = false;
@@ -84,6 +109,7 @@ class SeznamController
         $result = false;
 
         if (isset($_POST['submit'])) {
+
 
             // zapisujeme nazev, autory a abstrakt, ktere jsme dostali z formy, do promennych
             $options['nazev'] = $_POST['nazev'];
@@ -144,6 +170,75 @@ class SeznamController
             }
         }
         require_once(ROOT . '/views/user/novy_pr.php');
+
+        return true;
+    }
+
+    /**
+     * Vypise seznam prispevku k posouzeni
+     * @return bool
+     */
+    public function actionSeznamPosouzeni()
+    {
+        // Zkontroluje zda uzivatel ma ban
+        User::checkBan();
+
+        // Vrati id uzivatelu, pokud autorizovan
+        $id = User::checkLogged();
+
+        // Vrati informace o prispevku s id
+        $post = Articles::getPostById($id);
+        $pos = $post['posouzeni'];
+
+        // Vypise vsechne prispevky, ktere musi uzivatel ohodnotit
+        $list = Articles::getArtUserListPos($id);
+        require_once(ROOT . '/views/user/seznam_k_pos.php');
+
+        return true;
+    }
+
+    /**
+     * Hodnoceni zvoleneho prispevku
+     * @param $id
+     * @return bool
+     */
+    public function actionVote($id)
+    {
+        // Zkontroluje zda uzivatel ma ban
+        User::checkBan();
+
+        if (isset($_POST['submit'])) {
+
+            // Zjistujeme informace o uzivateli
+            $userId = User::checkLogged();
+            $user = User::getUserById($userId);
+
+            $options['userId'] = $user['idusers'];
+            $options['originalita'] = $_POST['originalita'];
+            $options['tema'] = $_POST['tema'];
+            $options['tech_kvalita'] = $_POST['tech_kvalita'];
+            $options['jaz_kvalita'] = $_POST['jaz_kvalita'];
+            $options['doporuceni'] = $_POST['doporuceni'];
+            $options['poznamky'] = $_POST['poznamky'];
+            $options['idpost'] = $id;
+
+            // Cheby
+            $errors = false;
+
+            // Validace
+            if (!isset($options['poznamky'])) {
+                $errors[] = 'Napište prosím poznamky';
+            }
+
+            if ($errors == false) {
+                // Pokud nevyskytly chyby, pridame novy prispevek
+                $id = Articles::addVote($options);
+
+                header("Location: /posouzeni");
+            }
+        }
+
+        require_once(ROOT . '/views/user/vote.php');
 
         return true;
     }

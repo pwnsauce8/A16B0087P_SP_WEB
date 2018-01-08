@@ -26,7 +26,8 @@ class Admin
     }
 
     /**
-     * @return bool zkontroluje zda li uzivatel ma ban (true/false)
+     * Nastavi na isBan '1' v tabulce users
+     * @return bool
      */
     public static function banUser($id) {
         // Соединение с БД
@@ -39,5 +40,52 @@ class Admin
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         return $result->execute();
+    }
+
+    /**
+     * Nastaveni posouzeni
+     * @param $id
+     * @param $options
+     * @return bool
+     */
+    public static function updatePostByIdSetPos($id, $options) {
+        // Pribojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $sql = "UPDATE `post` SET `posouzeni`= :username WHERE idpost = :id;";
+
+        Articles::updatePostDoneAdm($id);
+        // Příjem a vracení výsledků
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':username', $options['username'], PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    /**
+     * Vrati seznam prispevku
+     * @return array pole zaznamu
+     */
+    public static function getPosList()
+    {
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $result = $db->query('SELECT name, autors, celkem, uzivatel, poznamka FROM post, votes WHERE post_idpost = idpost');
+
+        // Prijem a vraceni vysledku
+        $i = 0;
+        $posList = array();
+        while ($row = $result->fetch()) {
+            $posList[$i]['name'] = $row['name'];
+            $posList[$i]['autors'] = $row['autors'];
+            $posList[$i]['celkem'] = $row['celkem'];
+            $posList[$i]['uzivatel'] = $row['uzivatel'];
+            $posList[$i]['poznamka'] = $row['poznamka'];
+            $i++;
+        }
+        return $posList;
     }
 }

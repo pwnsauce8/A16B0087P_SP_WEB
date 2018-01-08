@@ -31,8 +31,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <?php else: ?><div class="input-group">
                                             <?php if (isset($errors) && is_array($errors)): ?>
                                                     <?php foreach ($errors as $error): ?>
-
-                                                        <span class="text-danger"><?php echo $error?></span>
+                                                    <ul style="padding: 0;">
+                                                        <li style="list-style-type: none;"><span class="text-danger"><?php echo $error?></span></li>
+                                                    </ul>
 
                                                     <?php endforeach; ?>
                                             <?php endif; ?></div>

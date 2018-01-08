@@ -36,6 +36,64 @@ Všechné existujicí cesty v mém webu.
 
 ### controllers
 
+Řidicí třidy webu.
+
+#### AdminController.php
+
+Třída, která řidi funkcemi, ke kterým má přśtup  pouze Administrator</p>
+
+* actionIndex()
+* actionDownload($idPost)
+* actionBan($id)
+
+
+#### AdminSeznamController.php
+
+Třída, která řidi funkcemi (osobně vypisem tabulek), ke kterým má přśtup  pouze Administrator
+
+* actionSeznamPrispevku()
+* actionUsersban()
+* actionPosouzeni($id)
+* actionPosouzeniSeznam()
+
+####SeznamController.php
+
+Třída, která řidi funkcemi (osobně vypisem tabulek), ke kterým má přśtup jakýkoliv uživatel
+
+* actionIndex()
+* actionDelete($id)
+* actionUpdate($id)
+* actionAdd()
+* actionSeznamPosouzeni()
+* actionVote($id)
+
+
+#### SiteController.php
+
+Třída, která vyvolá stránky pro návštěvniky
+
+* actionLogin()
+* actionHome()
+* actionKonf()
+* actionMisto()
+* actionSponsori()
+* actionTemata()
+
+
+
+#### UserController.php
+Třída, která řidi funkcemi zaregistrovaného uživatele
+
+* actionRegister()
+* actionLogin()
+* actionLogout()
+* actionEditprofile()
+* actionSponsori()
+* actionTemata()
+
+
+
+
 ### models
 
 Models  všechné funkce, které jsem použivala ve svém webu.

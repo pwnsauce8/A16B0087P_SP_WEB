@@ -9,7 +9,7 @@
 
 return array(
     'host' => 'localhost',   // host name
-    'dbname' => 'mydb',      // nazev databazi
+    'dbname' => 'web',      // nazev databazi
     'user' => 'root',        // username
     'password' => '123',     // heslo
 );

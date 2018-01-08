@@ -146,7 +146,7 @@ class User
      */
     public static function checkLogged()
     {
-        if (isset($_SESSION['user'])) {
+        if (isset($_SESSION['user']) ) {
             return $_SESSION['user'];
         }
         // jinak na stranku s autorizaci
@@ -185,7 +185,7 @@ class User
         $db = Db::getConnection();
 
         // SQL dotaz
-        $result = $db->query('SELECT idusers, username FROM users ');
+        $result = $db->query('SELECT idusers, username, isBan FROM users ');
 
         // Prijem a vraceni vysledku
         $i = 0;
@@ -193,6 +193,7 @@ class User
         while ($row = $result->fetch()) {
             $categoryList[$i]['idusers'] = $row['idusers'];
             $categoryList[$i]['username'] = $row['username'];
+            $categoryList[$i]['isBan'] = $row['isBan'];
             $i++;
         }
         return $categoryList;

@@ -24,7 +24,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <hr/>
                                         </div>
 
-                                        Chcete zníčit příspěvek <span><?php echo $id;?></span> ?
+                                        Chcete zníčit příspěvek <span><span><?php
+                                                $post = Articles::getPostById($id);
+                                                echo $post['name']; ?></span> ?
                                         <br><br>
 
                                         <form method="post">

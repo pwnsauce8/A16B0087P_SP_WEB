@@ -10,6 +10,7 @@
 class UserController
 {
     /**
+     * Registrace uzivatelu
      * @return bool registrace
      */
     public function actionRegister()
@@ -57,6 +58,7 @@ class UserController
 
     /**
      * Autorizace uzivatelu
+     * @return bool
      */
     public function actionLogin()
     {
@@ -68,27 +70,27 @@ class UserController
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            // Флаг ошибок
+            // Chyby
             $errors = false;
 
-            // Валидация полей
+            // Validace
             if (!User::checkPassword($password)) {
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
             $password = md5($password);
 
-            // Проверяем существует ли пользователь
+            // Kontrola na existence uzivatele
             $userId = User::checkUserData($email, $password);
 
             if ($userId == false) {
-                // Если данные неправильные - показываем ошибку
-                $errors[] = 'Неправильные данные для входа на сайт';
+                // Pokud vyskytly chyby -> vypisujeme chyby
+                $errors[] = 'Špatné údaje';
             } else {
-                // Если данные правильные, запоминаем пользователя (сессия)
+                // Pokud nevyskytly chyby -> zapisujeme uzivatele do  SESSION
                 User::auth($userId);
 
-                // Перенаправляем пользователя в закрытую часть - кабинет
+                User::checkBan();
                 header("Location: /home");
             }
         }
@@ -96,25 +98,29 @@ class UserController
         return true;
     }
 
-
+    /**
+     * Logout
+     */
     public function actionLogout()
     {
 
-        // Удаляем информацию о пользователе из сессии
+        // Znicime informace o uzovetele v SESSION
         unset($_SESSION["user"]);
 
-        // Перенаправляем пользователя на главную страницу
         header("Location: /");
     }
 
+    /**
+     * Zmena informaci uzivatele
+     * @return bool
+     */
     public function actionEditprofile()
     {
         $userId = User::checkLogged();
 
-        // Обработка формы
+
         if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Получаем данные из формы редактирования. При необходимости можно валидировать значения
+
             $options['name'] = $_POST['name'];
             $options['email'] = $_POST['email'];
             $options['password'] = $_POST['password'];
@@ -140,10 +146,6 @@ class UserController
             // Kontrola dat
             if (!User::checkName($options['name'])) {
                 $errors[] = 'Jméno musí být délší, než 2 symboly';
-            }
-
-            if (!User::checkPassword($options['password'])) {
-                $errors[] = 'Heslo musí být délší, než 6 symboly';
             }
 
             if ($errors == false) {

@@ -28,6 +28,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                         <thead>
                                         <tr>
                                             <th>UserName</th>
+                                            <th>Má ban</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -35,6 +36,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                         foreach ($users as $user): ?>
                                             <tr>
                                                 <td data-label="username"><?php echo $user['username'];?></td>
+                                                <td data-label="username"><?php echo $user['isBan'];?></td>
                                                 <td data-label="ban"><a href="/banuser/<?php echo $user['idusers'];?>"><i
                                                             class="fa fa-times" aria-hidden="true"></i> ban</a>
                                                 </td>

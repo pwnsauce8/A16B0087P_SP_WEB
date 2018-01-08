@@ -1,12 +1,12 @@
 <?php
 /**
- * Seznam prispevku k posouzeni
+ * Stranka pro smazani prispevku
  * Semistrální práce z WEB 2017
  * Author       : Mukanova Zhanel
- * Date         : 06.01.2018
+ * Date         : 08.01.2018
  * Osobní číslo : A16B0087P
  */
-include ROOT . '/views/layouts/header.php'; ?>
+include ROOT . '/views/layouts/admin-header.php'; ?>
 
 
     <section class="main_content">
@@ -18,31 +18,20 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div class="col-md-12">
                                     <section class="login">
-                                        <div class="novy">Seznam přispěvků k posouzení</div>
+                                        <div class="novy">Seznam přispěvků</div>
 
                                         <div class="form-group">
                                             <hr/>
                                         </div>
 
-                                        <table class="tg_user">
-                                            <thead>
-                                            <tr>
-                                                <th>Datum</th>
-                                                <th>Nazev</th>
-                                                <th>Autoři</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php foreach ($list as $posts): ?>
-                                                <tr>
-                                                    <td data-label="Date"><?php echo $posts['date']; ?></td>
-                                                    <td data-label="Nazev"><?php echo $posts['name']; ?></td>
-                                                    <td data-label="Autori"><?php echo $posts['autors']; ?></td>
-                                                    <td data-label="Editovat"><a href="vote/<?php echo $posts['idpost']; ?>"><i class="fa fa-star" aria-hidden="true"></i></a></td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                            </tbody>
-                                        </table>
+                                        Chcete zníčit příspěvek <span><span><?php
+                                                $post = Articles::getPostById($id);
+                                                echo $post['name']; ?></span> ?
+                                        <br><br>
+
+                                        <form method="post">
+                                            <button type="submit" class="btn" name="submit">Zničit</button>
+                                        </form>
                                     </section>
                                 </div>
                             </div>
@@ -64,4 +53,4 @@ include ROOT . '/views/layouts/header.php'; ?>
     </section>
 
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/admin-footer.php'; ?>

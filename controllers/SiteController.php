@@ -1,8 +1,21 @@
 <?php
+/**
+ * Controller Site ridi vsemi strankami pro
+ * navtevniky
+ * uzivatel
+ * Semistrální práce z WEB 2017
+ * Author       : Mukanova Zhanel
+ * Date         : 06.01.2018
+ * Osobní číslo : A16B0087P
+ */
 
 class SiteController
 {
 
+    /**
+     * Autorizace uzivatele
+     * @return bool
+     */
     public function actionLogin()
     {
         $email = false;
@@ -13,27 +26,27 @@ class SiteController
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            // Флаг ошибок
+            // Chyby
             $errors = false;
 
-            // Валидация полей
+            // Validace
             if (!User::checkPassword($password)) {
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
+            // hach hesla
             $password = md5($password);
 
-            // Проверяем существует ли пользователь
+            // Konrolujeme existuje li uzivatel
             $userId = User::checkUserData($email, $password);
 
             if ($userId == false) {
-                // Если данные неправильные - показываем ошибку
-                $errors[] = 'Неправильные данные для входа на сайт';
+                // Pokud vyskytly chyby -> vypisujeme
+                $errors[] = 'Špatné udaje';
             } else {
-                // Если данные правильные, запоминаем пользователя (сессия)
+                // Pokud nevyskytly chyby -> zapisujeme uzivatele do SESSION
                 User::auth($userId);
 
-                // Перенаправляем пользователя в закрытую часть - кабинет
                 header("Location: /home");
             }
         }
@@ -41,10 +54,16 @@ class SiteController
         return true;
     }
 
+    /**
+     * Hlavni stranka uzivatele
+     * @return bool
+     */
     public function actionHome()
     {
 
+        // Konrola uzivatele (vrati id)
         $userId = User::checkLogged();
+        // Vrati informace uzivatele
         $user = User::getUserById($userId);
 
 
@@ -53,14 +72,21 @@ class SiteController
         return true;
     }
 
+    /**
+     * Stranka O Konferenci
+     * @return bool
+     */
     public function actionKonf()
     {
-        User::checkBan();
         require_once(ROOT . '/views/blog/o_konf.php');
 
         return true;
     }
 
+    /**
+     * Stranka Misto konani
+     * @return bool
+     */
     public function actionMisto()
     {
 
@@ -69,6 +95,10 @@ class SiteController
         return true;
     }
 
+    /**
+     * Stranka Sponsori
+     * @return bool
+     */
     public function actionSponsori()
     {
         require_once(ROOT . '/views/blog/sponsori.php');
@@ -76,6 +106,10 @@ class SiteController
         return true;
     }
 
+    /**
+     * Stranka Temata
+     * @return bool
+     */
     public function actionTemata()
     {
 
