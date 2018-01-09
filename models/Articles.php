@@ -304,6 +304,4 @@ class Articles
         return 0;
     }
 
-
-
 }

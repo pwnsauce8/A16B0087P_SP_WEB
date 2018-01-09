@@ -43,6 +43,8 @@ return array(
     'posoudit/([0-9]+)' => 'adminseznam/posouzeni/$1',
     'admin/delete/([0-9]+)' => 'adminseznam/delete/$1',
     'admin' => 'admin/index',
+    'posadm' => 'adminseznam/kposouzeni',
+
 
 
 

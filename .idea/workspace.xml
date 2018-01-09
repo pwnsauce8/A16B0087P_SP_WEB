@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b973c0e3-31cc-403d-86b1-25764c337c13" name="Default" comment="Update 1 MVC">
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/admin/delete.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/admin/pos_seznam.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/admin/posouzeni.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/user/vote.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/views/admin/k_posouzeni.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/config/db_params.php" afterPath="$PROJECT_DIR$/config/db_params.php" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/AdminController.php" afterPath="$PROJECT_DIR$/controllers/AdminController.php" />
       <change beforePath="$PROJECT_DIR$/controllers/AdminSeznamController.php" afterPath="$PROJECT_DIR$/controllers/AdminSeznamController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/NovyController.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/controllers/PosouzeniController.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/controllers/SeznamController.php" afterPath="$PROJECT_DIR$/controllers/SeznamController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/models/Admin.php" afterPath="$PROJECT_DIR$/models/Admin.php" />
       <change beforePath="$PROJECT_DIR$/models/Articles.php" afterPath="$PROJECT_DIR$/models/Articles.php" />
-      <change beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
-      <change beforePath="$PROJECT_DIR$/template/css/main.css" afterPath="$PROJECT_DIR$/template/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515334063formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515334104Relacni_Model.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515335145formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515335260formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515335374formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515335661formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515349711Relacni_Model.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515349724formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515349772formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515350090Relacni_Model.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515352240formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515400995Relacni_Model.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/upload/files/1515401034formular-zadani-sp-db1.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/views/admin/seznamadmin.php" afterPath="$PROJECT_DIR$/views/admin/seznamadmin.php" />
-      <change beforePath="$PROJECT_DIR$/views/admin/users.php" afterPath="$PROJECT_DIR$/views/admin/users.php" />
-      <change beforePath="$PROJECT_DIR$/views/blog/registrace.php" afterPath="$PROJECT_DIR$/views/blog/registrace.php" />
       <change beforePath="$PROJECT_DIR$/views/layouts/admin-header.php" afterPath="$PROJECT_DIR$/views/layouts/admin-header.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/delete.php" afterPath="$PROJECT_DIR$/views/user/delete.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/editprofile.php" afterPath="$PROJECT_DIR$/views/user/editprofile.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/seznam_k_pos.php" afterPath="$PROJECT_DIR$/views/user/seznam_k_pos.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,93 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SeznamController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/SeznamController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="53" selection-end-column="5" />
-              <folding>
-                <element signature="e#6#226#0#PHP" expanded="true" />
-                <element signature="n#actionIndex#0;n#SeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionUpdate#0;n#SeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionAdd#0;n#SeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionSeznamPosouzeni#0;n#SeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionVote#0;n#SeznamController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminSeznamController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/AdminSeznamController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="117" column="40" lean-forward="true" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
-              <folding>
-                <element signature="e#6#208#0#PHP" expanded="true" />
-                <element signature="n#actionSeznamPrispevku#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionUsersban#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionPosouzeni#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
-                <element signature="n#actionPosouzeniSeznam#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posouzeni.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/posouzeni.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pos_seznam.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/admin/pos_seznam.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seznamadmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/seznamadmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="41" column="118" lean-forward="false" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
-              <folding>
-                <marker date="1515450086689" expanded="true" signature="3133:3260" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/delete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -159,7 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/controllers/RegistraceController.php" />
         <option value="$PROJECT_DIR$/views/user/userlog.php" />
         <option value="$PROJECT_DIR$/views/blog/login.php" />
@@ -192,13 +71,11 @@
         <option value="$PROJECT_DIR$/template/css/main.css" />
         <option value="$PROJECT_DIR$/views/admin/posouzeni.php" />
         <option value="$PROJECT_DIR$/views/user/vote.php" />
-        <option value="$PROJECT_DIR$/views/layouts/admin-header.php" />
         <option value="$PROJECT_DIR$/config/db_params.php" />
         <option value="$PROJECT_DIR$/views/blog/registrace.php" />
         <option value="$PROJECT_DIR$/views/user/editprofile.php" />
         <option value="$PROJECT_DIR$/models/User.php" />
         <option value="$PROJECT_DIR$/views/admin/users.php" />
-        <option value="$PROJECT_DIR$/models/Articles.php" />
         <option value="$PROJECT_DIR$/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/models/Admin.php" />
         <option value="$PROJECT_DIR$/controllers/SeznamController.php" />
@@ -206,10 +83,13 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/views/admin/delete.php" />
-        <option value="$PROJECT_DIR$/config/routes.php" />
         <option value="$PROJECT_DIR$/views/admin/seznamadmin.php" />
-        <option value="$PROJECT_DIR$/controllers/AdminSeznamController.php" />
         <option value="$PROJECT_DIR$/views/admin/pos_seznam.php" />
+        <option value="$PROJECT_DIR$/config/routes.php" />
+        <option value="$PROJECT_DIR$/views/layouts/admin-header.php" />
+        <option value="$PROJECT_DIR$/views/admin/k_posouzeni.php" />
+        <option value="$PROJECT_DIR$/models/Articles.php" />
+        <option value="$PROJECT_DIR$/controllers/AdminSeznamController.php" />
       </list>
     </option>
   </component>
@@ -251,28 +131,12 @@
               <item name="web" type="b2602c69:ProjectViewProjectNode" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,17 +178,17 @@
       <workItem from="1515316122069" duration="37707000" />
       <workItem from="1515400649771" duration="36591000" />
       <workItem from="1515446949233" duration="2536000" />
+      <workItem from="1515489708687" duration="2505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96539000" />
+    <option name="totallyTimeSpent" value="99044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10102489" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -356,19 +220,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="34" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/DownloadController.php" />
-    <entry file="file://$PROJECT_DIR$/views/blog/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="40" column="69" lean-forward="false" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/HomeController.php" />
     <entry file="file://$PROJECT_DIR$/controllers/MistoController.php" />
     <entry file="file://$PROJECT_DIR$/controllers/KonfController.php" />
@@ -503,13 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/admin-header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="59" column="25" lean-forward="true" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -563,27 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="244" column="44" lean-forward="false" selection-start-line="244" selection-start-column="27" selection-end-line="244" selection-end-column="44" />
-          <folding>
-            <element signature="n#checkName#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#checkAutori#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#addAbstract#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#getArtList#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#getArtUserList#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#getArtUserListPos#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#deletePostById#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#updatePostById#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#getPostById#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#updatePostDone#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#updatePostDoneAdm#0;n#Articles#0;n#!!top" expanded="false" />
-            <element signature="n#addVote#0;n#Articles#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Files.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -632,14 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="n#actionLogin#0;n#SiteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionHome#0;n#SiteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionKonf#0;n#SiteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionMisto#0;n#SiteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionSponsori#0;n#SiteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionTemata#0;n#SiteController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -647,13 +467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="n#actionRegister#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#actionLogin#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#actionLogout#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#actionEditprofile#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="e#2779#4122#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,21 +474,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#184#0#PHP" expanded="false" />
-            <element signature="n#actionIndex#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#actionDownload#0;n#AdminController#0;n#!!top" expanded="false" />
-            <element signature="n#actionBan#0;n#AdminController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SeznamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="702">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="33" selection-start-column="3" selection-end-line="53" selection-end-column="5" />
           <folding>
-            <element signature="e#6#226#0#PHP" expanded="true" />
+            <element signature="e#6#226#0#PHP" expanded="false" />
             <element signature="n#actionIndex#0;n#SeznamController#0;n#!!top" expanded="false" />
             <element signature="n#actionUpdate#0;n#SeznamController#0;n#!!top" expanded="false" />
             <element signature="n#actionAdd#0;n#SeznamController#0;n#!!top" expanded="false" />
@@ -689,30 +496,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="28" column="70" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="547">
           <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.php">
+    <entry file="file://$PROJECT_DIR$/views/admin/pos_seznam.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        <state relative-caret-position="408">
+          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="305" column="4" lean-forward="false" selection-start-line="305" selection-start-column="4" selection-end-line="305" selection-end-column="4" />
+          <folding>
+            <element signature="n#checkName#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#checkAutori#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#addAbstract#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#getArtList#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#getArtUserList#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#getArtUserListPos#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#deletePostById#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#updatePostById#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#getPostById#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#updatePostDone#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#updatePostDoneAdm#0;n#Articles#0;n#!!top" expanded="false" />
+            <element signature="n#addVote#0;n#Articles#0;n#!!top" expanded="false" />
+            <marker date="1515492371365" expanded="true" signature="931:1120" ph="INSERT INTO post... " />
+            <marker date="1515492371365" expanded="true" signature="2170:2210" ph="SELECT * FRO... post" />
+            <marker date="1515492371365" expanded="true" signature="2999:3178" ph="SELECT idpos... " />
+            <marker date="1515492371365" expanded="true" signature="3821:3948" ph="SELECT idpos... " />
+            <marker date="1515492371365" expanded="true" signature="4533:4568" ph="DELETE FROM post... " />
+            <marker date="1515492371365" expanded="true" signature="5108:5227" ph="UPDATE `post`... " />
+            <marker date="1515492371365" expanded="true" signature="6038:6075" ph="SELECT * FRO... post" />
+            <marker date="1515492371365" expanded="true" signature="6617:6665" ph="UPDATE `post`... " />
+            <marker date="1515492371365" expanded="true" signature="7109:7160" ph="UPDATE `post`... " />
+            <marker date="1515492371365" expanded="true" signature="8051:8302" ph="INSERT INTO `votes`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/k_posouzeni.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="46" column="109" lean-forward="false" selection-start-line="46" selection-start-column="109" selection-end-line="46" selection-end-column="109" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/seznamadmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="41" column="118" lean-forward="false" selection-start-line="41" selection-start-column="118" selection-end-line="41" selection-end-column="118" />
+        <state relative-caret-position="252">
+          <caret line="38" column="155" lean-forward="true" selection-start-line="38" selection-start-column="126" selection-end-line="38" selection-end-column="155" />
           <folding>
             <marker date="1515450086689" expanded="true" signature="3133:3260" ph="..." />
           </folding>
@@ -721,30 +566,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/AdminSeznamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="117" column="40" lean-forward="true" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state relative-caret-position="385">
+          <caret line="125" column="33" lean-forward="false" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
           <folding>
-            <element signature="e#6#208#0#PHP" expanded="true" />
+            <element signature="e#244#349#0#PHP" expanded="false" />
             <element signature="n#actionSeznamPrispevku#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
             <element signature="n#actionUsersban#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
-            <element signature="n#actionPosouzeni#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
             <element signature="n#actionPosouzeniSeznam#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
+            <element signature="n#actionDelete#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
+            <element signature="n#actionKPosouzeni#0;n#AdminSeznamController#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/posouzeni.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
+        <state relative-caret-position="84">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/pos_seznam.php">
+    <entry file="file://$PROJECT_DIR$/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+        <state relative-caret-position="378">
+          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/admin-header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="62" column="32" lean-forward="false" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2900">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

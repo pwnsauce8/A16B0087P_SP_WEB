@@ -122,4 +122,23 @@ class AdminSeznamController
         return true;
     }
 
+    /**
+     * Vypise tabulku k posouzeni
+     * @return bool
+     */
+    public function actionKPosouzeni()
+    {
+        // Zkontroluje zda uzivatel ma BAN
+        User::checkBan();
+        // Zkontroluje zda uzivatel ma pristup
+        Admin::checkAdmin();
+
+        $list = Articles::getArtList();
+        $userlist = User::getUsersList();
+
+
+        require_once(ROOT . '/views/admin/k_posouzeni.php');
+        return true;
+    }
+
 }

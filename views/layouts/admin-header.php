@@ -60,6 +60,9 @@
                 <a href="/seznam/posouzeni">Seznam posouzení</a>
             </li>
             <li>
+                <a href="/posadm">K posouzeni</a>
+            </li>
+            <li>
                 <a href="/home">Vrátit se</a>
             </li>
             <li><a href="/user/logout/"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Odhlasit</a></li>
