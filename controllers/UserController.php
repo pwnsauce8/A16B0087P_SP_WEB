@@ -123,7 +123,6 @@ class UserController
 
             $options['name'] = $_POST['name'];
             $options['email'] = $_POST['email'];
-            $options['password'] = $_POST['password'];
             $options['jmeno'] = $_POST['jmeno'];
             $options['organizace'] = $_POST['organizace'];
 
@@ -148,11 +147,6 @@ class UserController
                 $errors[] = 'Jméno musí být délší, než 2 symboly';
             }
 
-            if ($errors == false) {
-                $options['password']  = md5($options['password']);
-                // Pokud nevyskytly chyby -> registrace
-                $result = User::updateUserById($userId, $options);
-            }
 
 
         }

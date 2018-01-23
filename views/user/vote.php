@@ -18,7 +18,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div class="col-md-12">
                                     <section class="login">
-                                        <div class="novy">Editace posudku </div>
+                                        <h2>Editace posudku </h2>
                                         <div class="textq">Název příspěvku:
                                             <span><?php
                                             $post = Articles::getPostById($id);

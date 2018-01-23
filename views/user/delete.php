@@ -17,28 +17,28 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Seznam přispěvků</div>
+                                    <h2>Seznam přispěvků</h2>
 
-                                        <div class="form-group">
-                                            <hr/>
-                                        </div>
+                                    <div class="form-group">
+                                        <hr/>
+                                    </div>
 
-                                        Chcete zníčit příspěvek <span><span><?php
-                                                $post = Articles::getPostById($id);
-                                                echo $post['name']; ?></span> ?
-                                        <br><br>
+                                    Chcete zníčit příspěvek <span><?php
+                                        $post = Articles::getPostById($id);
+                                        echo $post['name']; ?></span> ?
+                                    <br><br>
 
-                                        <form method="post">
-                                            <button type="submit" class="btn" name="submit">Zničit</button>
-                                        </form>
-                                    </section>
+                                    <form method="post">
+                                        <button type="submit" class="btn" name="submit">Zničit</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <aside class="right_aside">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit iste maiores sapiente, omnis

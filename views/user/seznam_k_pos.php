@@ -8,7 +8,6 @@
  */
 include ROOT . '/views/layouts/header.php'; ?>
 
-
     <section class="main_content">
         <div class="container">
             <div class="col-md-8">
@@ -17,8 +16,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Seznam přispěvků k posouzení</div>
+                                        <h2>Seznam přispěvků k posouzení</h2>
 
                                         <div class="form-group">
                                             <hr/>
@@ -30,6 +28,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                 <th>Datum</th>
                                                 <th>Nazev</th>
                                                 <th>Autoři</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -43,7 +42,6 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </section>
                                 </div>
                             </div>
                         </div>

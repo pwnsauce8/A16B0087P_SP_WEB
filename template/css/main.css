@@ -63,6 +63,7 @@
  * Footer
  */
  .footer_line {
+	padding-top: 17px;
  	background-color: #43484C;
  	color: #fff;
  }
@@ -79,10 +80,10 @@
  	z-index: 10;
  }
  .top_links a {
- 	text-decoration: underline;
+ 	text-decoration: none;
  }
  .top_links a:hover {
- 	text-decoration: none;
+	 text-decoration: underline;
  }
  .soc_buttons {
  	float: right;
@@ -261,7 +262,7 @@
  .main_content label, .main_content input, .main_content textarea {
  	width: 87%;
  	display: block;
- 	padding: 3px;
+	padding-top: 5px;
  }
 
  .text {
@@ -280,7 +281,7 @@
 	span {
 		color: red;
 	}
-	.novy {
+	h2 {
 		color: #43484C;
 		text-align: left;
 		font-size: 32px;

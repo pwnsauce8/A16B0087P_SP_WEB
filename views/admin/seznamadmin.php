@@ -17,8 +17,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Seznam přispěvků</div>
+                                        <h2>Seznam přispěvků</h2>
 
                                         <div class="form-group">
                                             <hr/>
@@ -30,6 +29,8 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                                 <th>Datum</th>
                                                 <th>Nazev</th>
                                                 <th>Autoři</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -39,29 +40,15 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                                     <td data-label="Nazev"><a href="posoudit/<?php echo $posts['idpost']; ?>"><?php echo $posts['name']; ?></a></td>
                                                     <td data-label="Autori"><?php echo $posts['autors']; ?></td>
                                                     <td data-label="Vymazat"><a href="admin/delete/<?php echo $posts['idpost']; ?>"><i
-                                                                    class="fa fa-times" aria-hidden="true"></i> Smazat</a>
-                                                    </td>
-<!--                                                    <td data-label="Posouzeni">-->
-<!--                                                        <select>-->
-<!--                                                            --><?php //if (is_array($userList)): ?>
-<!--                                                            --><?php //foreach ($userList as $user): ?>
-<!--                                                            <option id="--><?php //echo $user['idusers'];?><!--">--><?php //echo $user['username']; ?><!--</option>-->
-<!--                                                            --><?php //endforeach; ?>
-<!--                                                            --><?php //endif; ?>
-<!--                                                        </select>-->
-<!--                                                    </td>-->
-<!--                                                    <td data-label="Vymazat"><a href="#"><i class="fa fa-share" aria-hidden="true"></i></a>-->
-<!--                                                    </td>-->
+                                                                    class="fa fa-times" aria-hidden="true"></i> Smazat</a></td>
 
-                                                    </td>
-                                                    <td data-label="Download"><a href="download/<?php echo $posts['idpost']; ?>"><i class="fa fa-download" aria-hidden="true"></i></i></a>
+                                                    <td data-label="Download"><a href="download/<?php echo $posts['idpost']; ?>"><i class="fa fa-download" aria-hidden="true"></i></a>
                                                     </td>
 
                                                 </tr>
                                             <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </section>
                                 </div>
                             </div>
                         </div>

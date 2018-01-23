@@ -17,9 +17,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                             <div class="text">
                                 <div class="col-md-12">
                                     <section class="login">
-                                        <div class="novy">Uprava příspěvku: <span><?php
+                                        <h2>Uprava příspěvku: <span><?php
                                                 $post = Articles::getPostById($id);
-                                                echo $post['name']; ?> </span></div>
+                                                echo $post['name']; ?> </span></h2>
 
                                         <?php if (isset($errors) && is_array($errors)): ?>
                                             <ul style="margin-left: 0; padding-left: 0;">
@@ -32,46 +32,39 @@ include ROOT . '/views/layouts/header.php'; ?>
                                         <div class="form-group">
                                             <hr/>
                                         </div>
+                                        
 
                                         <form method="post" action="#" autocomplete="off" enctype="multipart/form-data">
 
+                                            <label for="name">Název přispěvku: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="fa fa-comment" aria-hidden="true"></i></i>
+                                                <input id="name" type="text" name="nazev" class="form-control"
+                                                       placeholder=" Název přispěvku" maxlength="50" value=" <?php echo $post['name']; ?>">
+                                            </div>
+
+                                            <label for="autori">Autoři: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="glyphicon glyphicon-user"></i></i>
+                                                <input id="autori" name="autori" type="text" class="form-control"
+                                                       placeholder=" Autoři přispěvku" maxlength="200" value=" <?php echo $post['autors']; ?>">
+                                            </div>
+
+                                            <label for="textarea">Abstract: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="fa fa-align-justify" aria-hidden="true"></i></i>
+                                                <textarea class="form-control" id="textarea" name="abstract" rows="8" > <?php echo $post['abstract']; ?></textarea>
+                                            </div>
+
+                                            <label for="file">PDF soubor:<br></label>
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <label for="nazev">Název přispěvku: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                            class="glyphicon glyphicon-user"></span></span>
-                                                    <input type="text" name="nazev" class="form-control"
-                                                           value=" <?php echo $post['name']; ?>" maxlength="50" value=""/>
+                                                    <input id="file" type="file" name="fupload">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="autori">Autoři: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                            class="glyphicon glyphicon-user"></span></span>
-                                                    <input type="text" name="autori" class="form-control"
-                                                           value=" <?php echo $post['autors']; ?>" maxlength="200" value=""/>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="abstract">Abstract: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                            class="glyphicon glyphicon-user"></span></span>
-                                                    <textarea name="abstract" rows="8"> <?php echo $post['abstract']; ?></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label>PDF soubor:<br></label>
-                                                    <span class="input-group-addon"><span
-                                                            class="glyphicon glyphicon-user"></span></span>
-                                                    <input style="margin-bottom: 9px;" type="FILE" name="fupload"
-                                                           class="form-control" value=""/>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn" name="submit">Uložit</button>
+                                                <button type="submit" class="btn btn-success" name="submit">Uložit</button>
                                             </div>
 
                                             <div class="form-group">

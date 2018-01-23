@@ -8,7 +8,6 @@
  */
 include ROOT . '/views/layouts/header.php'; ?>
 
-
     <section class="main_content">
         <div class="container">
             <div class="col-md-8">
@@ -17,8 +16,9 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Seznam přispěvků</div>
+                                    <div class="form-group">
+                                        <h2>Seznam přispěvků</h2>
+                                    </div>
 
                                         <div class="form-group">
                                             <hr/>
@@ -30,6 +30,8 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                 <th>Datum</th>
                                                 <th>Nazev</th>
                                                 <th>Autoři</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -48,13 +50,13 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </section>
+                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
             <div class="col-md-4">
                 <aside class="right_aside">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit iste maiores sapiente, omnis
@@ -67,6 +69,5 @@ include ROOT . '/views/layouts/header.php'; ?>
             </div>
         </div>
     </section>
-
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

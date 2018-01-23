@@ -20,42 +20,43 @@ include ROOT . '/views/layouts/header.php'; ?>
                                         <div class="col-md-12">
 
                                             <div class="form-group">
-                                                <div class="novy">Avtorizace.</div>
+                                                <h2>Avtorizace.</h2>
                                             </div>
 
                                             <?php if (isset($errors) && is_array($errors)): ?>
-                                                <ul style="margin-left: 0; padding-left: 0;">
+
+                                                <div class="alert alert-info fade in alert-dismissable">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
                                                     <?php foreach ($errors as $error): ?>
-                                                        <li style="color: red; list-style-type: none; "> <?php echo $error?></li>
+                                                    <strong>Info!</strong> <?php echo $error ?> <br>
                                                     <?php endforeach; ?>
-                                                </ul>
+                                                </div>
+
                                             <?php endif; ?>
 
                                             <div class="form-group">
                                                 <hr>
                                             </div>
 
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                    <label for="email">Email: <span>***</span></label>
-                                                    <input type="email" name="email" class="form-control" placeholder=" Zadejte Email" value="" maxlength="40">
-                                                </div>
+                                            <label for="email">Email: <span>***</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
                                             </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                    <label for="password">Heslo: <span>***</span></label>
-                                                    <input type="password" name="password" class="form-control" placeholder=" Zadejte Heslo" maxlength="15">
-                                                </div>
+
+                                            <label for="email">Heslo: <span>***</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                                             </div>
+
 
                                             <div class="form-group">
                                                 <hr>
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn" name="submit">Autorizace</button>
+                                                <button type="submit" class="btn btn-success" name="submit">Autorizace</button>
                                             </div>
 
                                             <div class="form-group">

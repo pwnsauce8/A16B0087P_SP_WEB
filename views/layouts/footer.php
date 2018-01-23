@@ -7,6 +7,7 @@
  * Osobní číslo : A16B0087P
  */
 ?>
+
 <footer>
     <div class="footer_line">
         <div class="container">
@@ -20,7 +21,6 @@
             </div>
         </div>
     </div>
-    </div>
 </footer>
 
 <div id="hidden">
@@ -28,12 +28,12 @@
         <h3 style="text-align: center;">Příhlašení do systému</h3>
 
         <label for="email">Email:</label>
-        <input type="text" name="email"required placeholder=" Email">
+        <input type="text" id="email" name="email" required placeholder=" Email">
 
         <label for="password">Heslo:</label>
-        <input style="margin-bottom: 9px;" type="password" name="password"required placeholder=" Zadejte heslo">
+        <input style="margin-bottom: 9px;" type="password" id="password" name="password" required placeholder=" Zadejte heslo">
 
-        <button style="margin: auto;" type="sumbit" name="submit" class="btn">Vchod</button>
+        <button style="margin: auto;" type="submit" name="submit" class="btn">Vchod</button>
 
         <a style="margin-left: 53px;" href="/registrace">Registrace</a>
     </form>

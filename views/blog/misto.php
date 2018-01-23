@@ -17,7 +17,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <div class="novy">Místo konání.</div>
+                                    <h2>Místo konání.</h2>
                                     <div class="form-group">
                                         <hr>
                                     </div>

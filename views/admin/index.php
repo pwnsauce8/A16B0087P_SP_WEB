@@ -15,7 +15,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <div class="novy">ADMIN - PANEL</div>
+                                    <h2">ADMIN - PANEL</h2>
                                     <div class="form-group">
                                         <hr>
                                     </div>

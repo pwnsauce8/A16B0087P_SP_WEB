@@ -17,8 +17,8 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Seznam přispěvků</div>
+
+                                        <h2>Seznam přispěvků</h2>
 
                                         <div class="form-group">
                                             <hr/>
@@ -48,7 +48,6 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                             <?php endforeach; ?>
                                             </tbody>
                                         </table>
-                                    </section>
                                 </div>
                             </div>
                         </div>

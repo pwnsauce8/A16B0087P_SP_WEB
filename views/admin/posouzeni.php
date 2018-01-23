@@ -17,9 +17,8 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
                                         <form method="post" action="#" autocomplete="off">
-                                            <div class="novy">Příspěvek k posouzení.</div>
+                                            <h2>Příspěvek k posouzení.</h2>
                                             <?php $post = Articles::getPostById($id);?>
                                             <a href="download/<?php echo $post['idpost']; ?>"><i class="fa fa-download" aria-hidden="true"></i> Stáhnout příspěvek</a>
 
@@ -88,7 +87,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                             </div>
                                             
                                         </form>
-                                    </section>
+
                                 </div>
                             </div>
                         </div>

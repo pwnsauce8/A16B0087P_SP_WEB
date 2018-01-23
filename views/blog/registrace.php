@@ -23,53 +23,58 @@ include ROOT . '/views/layouts/header.php'; ?>
                                         <div class="col-md-12">
 
                                             <div class="form-group">
-                                                <div class="novy">Registrace.</div>
+                                                <h2>Registrace.</h2>
                                             </div>
+
                                             <?php if ($result): ?>
-                                            <p style="color: green;">Děkujeme za registraci</p>
 
-                                            <?php else: ?><div class="input-group">
-                                            <?php if (isset($errors) && is_array($errors)): ?>
-                                                    <?php foreach ($errors as $error): ?>
-                                                    <ul style="padding: 0;">
-                                                        <li style="list-style-type: none;"><span class="text-danger"><?php echo $error?></span></li>
-                                                    </ul>
-
-                                                    <?php endforeach; ?>
-                                            <?php endif; ?></div>
-
-                                            <div class="form-group">
-                                                <hr>
+                                            <div class="alert alert-success alert-dismissable">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                <strong>Success!</strong> Děkujeme za registraci
                                             </div>
+                                            <?php else: ?>
+                                            <div class="input-group">
 
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="username">Jmeno: <span>***</span></label>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                    <input type="text" name="name" class="form-control" placeholder=" Zadejte Jmeno" maxlength="50" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="email">Email: <span>***</span></label>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                    <input type="email" name="email" class="form-control" placeholder=" Zadejte Email" maxlength="40" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="password">Heslo: <span>***</span></label>
-                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                    <input type="password" name="password" class="form-control" placeholder=" Zadejte Heslo" maxlength="15">
-                                                </div>
+                                                <?php if (isset($errors) && is_array($errors)): ?>
+
+                                                    <div class="alert alert-info fade in alert-dismissable">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                                        <?php foreach ($errors as $error): ?>
+                                                            <strong>Info!</strong> <?php echo $error ?> <br>
+                                                        <?php endforeach; ?>
+                                                    </div>
+
+                                                <?php endif; ?>
                                             </div>
 
                                             <div class="form-group">
                                                 <hr>
                                             </div>
 
+                                            <label for="name">Jméno: <span>***</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="name" type="text" class="form-control" name="name" placeholder="Email">
+                                            </div>
+
+                                            <label for="email">Email: <span>***</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                                            </div>
+
+                                            <label for="email">Heslo: <span>***</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                                            </div>
+
                                             <div class="form-group">
-                                                <button type="submit" class="btn" name="submit">Registrace</button>
+                                                <hr>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success" name="submit">Registrace</button>
                                             </div>
 
                                             <div class="form-group">

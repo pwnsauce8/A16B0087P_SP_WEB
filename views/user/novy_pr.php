@@ -16,19 +16,22 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <section class="login">
-                                        <div class="novy">Nový přispěvek</div>
+                                    <div class="form-group">
+                                        <h2>Nový příspěvek.</h2>
+                                    </div>
 
                                         <?php if ($result): ?>
                                             <span>Uspěch</span>
                                         <?php else: ?>
 
                                         <?php if (isset($errors) && is_array($errors)): ?>
-                                            <ul style="margin-left: 0; padding-left: 0;">
-                                                <?php foreach ($errors as $error): ?>
-                                                    <li style="color: red; list-style-type: none; "> <?php echo $error?></li>
+                                        <div class="alert alert-info fade in alert-dismissable">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+
+                                            <?php foreach ($errors as $error): ?>
+                                                    <strong>Info!</strong> <?php echo $error ?> <br>
                                                 <?php endforeach; ?>
-                                            </ul>
+                                        </div>
                                         <?php endif; ?>
                                         <?php endif; ?>
 
@@ -38,50 +41,42 @@ include ROOT . '/views/layouts/header.php'; ?>
 
                                         <form method="post" action="#" autocomplete="off" enctype="multipart/form-data">
 
+                                            <label for="name">Název přispěvku: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="fa fa-comment" aria-hidden="true"></i></i>
+                                                <input id="name" type="text" name="nazev" class="form-control"
+                                                       placeholder=" Název přispěvku" maxlength="50" value="">
+                                            </div>
+
+                                            <label for="autori">Autoři: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="glyphicon glyphicon-user"></i></i>
+                                                <input id="autori" name="autori" type="text" class="form-control"
+                                                       placeholder=" Autoři přispěvku" maxlength="200" value=""/>
+                                            </div>
+
+                                            <label for="textarea">Abstract: <span>***</span></label>
+                                            <div class="input-group">
+                                                <i class="input-group-addon"><i class="fa fa-align-justify" aria-hidden="true"></i></i>
+                                                <textarea class="form-control" id="textarea" name="abstract" rows="8"> Max. 1500 symbolů</textarea>
+                                            </div>
+
+                                            <label for="file">PDF soubor:<br></label>
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <label for="nazev">Název přispěvku: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
-                                                    <input type="text" name="nazev" class="form-control"
-                                                           placeholder=" Název přispěvku" maxlength="50" value=""/>
+                                                    <input id="file" type="file" name="fupload">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="autori">Autoři: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
-                                                    <input type="text" name="autori" class="form-control"
-                                                           placeholder=" Autoři přispěvku" maxlength="200" value=""/>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label for="abstract">Abstract: <span>***</span></label>
-                                                    <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
-                                                    <textarea name="abstract" rows="8"> Max. 1500 symbolů</textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <label>PDF soubor:<br></label>
-                                                    <span class="input-group-addon"><span
-                                                                class="glyphicon glyphicon-user"></span></span>
-                                                    <input style="margin-bottom: 9px;" type="FILE" name="fupload"
-                                                           class="form-control" value=""/>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn" name="submit">Uložit</button>
+                                                <button type="submit" class="btn btn-success" name="submit">Uložit</button>
                                             </div>
 
                                             <div class="form-group">
                                                 <hr/>
                                             </div>
                                         </form>
-                                    </section>
+
                                 </div>
                             </div>
                         </div>

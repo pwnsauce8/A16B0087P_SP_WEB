@@ -16,7 +16,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                         <div class="row">
                             <div class="text">
                                 <div class="col-md-12">
-                                    <div class="novy">Sponsoři.</div>
+                                    <h2>Sponsoři.</h2>
                                     <div class="form-group">
                                         <hr>
                                     </div>
@@ -27,13 +27,14 @@ include ROOT . '/views/layouts/header.php'; ?>
                                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     <br><br>
 
-                                    <ul>
-                                        <li>Voluptas</li>
-                                        <li>Pellentesque</li>
-                                        <li>Sagittis</li>
-                                        <li>Aliquam</li>
-                                        <li>Donec</li>
-                                    </ul>
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">Voluptas</a>
+                                        <a href="#" class="list-group-item">Pellentesque</a>
+                                        <a href="#" class="list-group-item">Sagittis</a>
+                                        <a href="#" class="list-group-item">Aliquam</a>
+                                        <a href="#" class="list-group-item">Donec</a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

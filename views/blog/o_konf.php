@@ -16,7 +16,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                     <div class="row">
                         <div class="text">
                             <div class="col-md-12">
-                                <div class="novy">Konference.</div>
+                                <h2>Konference.</h2>
                                 <div class="form-group">
                                     <hr>
                                 </div>
