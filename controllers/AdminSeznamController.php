@@ -69,7 +69,7 @@ class AdminSeznamController
             $errors = false;
 
             if ($errors == false) {
-                // Pokud nevyskytly chyby -> registrace
+                // Pokud nevyskytly chyby
                 $result = Admin::updatePostByIdSetPos($id, $options);
                 header("Location: /admsez");
             }
@@ -92,8 +92,7 @@ class AdminSeznamController
         // Zkontroluje zda uzivatel ma pristup
         Admin::checkAdmin();
 
-        // Vrati seznam prispevku
-        $list = Admin::getPosList();
+        $list = Admin::getInfoVote();
 
         require_once(ROOT . '/views/admin/pos_seznam.php');
 
@@ -138,6 +137,26 @@ class AdminSeznamController
 
 
         require_once(ROOT . '/views/admin/k_posouzeni.php');
+        return true;
+    }
+
+    /**
+     * Informace o posouzenem prispevku
+     * @return bool
+     */
+    public function actionInfo($id)
+    {
+
+        // Zkontroluje zda uzivatel ma BAN
+        User::checkBan();
+        // Zkontroluje zda uzivatel ma pristup
+        Admin::checkAdmin();
+
+        // Vrati seznam prispevku
+        $list = Admin::getVotesById($id);
+        $info = Admin::getInfoVote();
+        require_once(ROOT . '/views/admin/info.php');
+
         return true;
     }
 

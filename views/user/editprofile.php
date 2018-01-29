@@ -23,6 +23,13 @@ include ROOT . '/views/layouts/header.php'; ?>
                                     <?php $userId = User::checkLogged();
                                     $user = User::getUserById($userId); ?>
 
+                                    <?php if ($result): ?>
+                                        <div class="alert alert-success alert-dismissable">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong>Success!</strong> Profile byl upraven
+                                        </div>
+                                    <?php endif; ?>
+
                                     <?php if (isset($errors) && is_array($errors)): ?>
                                         <div class="alert alert-info fade in alert-dismissable">
                                             <a href="#" class="close" data-dismiss="alert" aria-label="close"

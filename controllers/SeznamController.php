@@ -65,6 +65,9 @@ class SeznamController
         User::checkBan();
         // Vrati informace o prispevku
         $product = Articles::getPostById($id);
+        $result = false;
+        // Chyby
+        $errors = false;
 
 
         if (isset($_POST['submit'])) {
@@ -74,7 +77,30 @@ class SeznamController
             $options['autori'] = $_POST['autori'];
             $options['abstract'] = $_POST['abstract'];
             $options['date'] = date("Y-m-d H:i:s");
-            $options['file'] = 'file path';
+
+            if (empty($_FILES['fupload']['name'])) {  // Pokud neni file
+//                $options['file'] = "No file.";
+                $errors[] = 'Vložte prosím file!';
+            }
+            else {
+                $file = Files::getFileNameById($id);
+                unlink($file['file']);
+
+                if(preg_match('/[.](PDF)|(pdf)$/',$_FILES['fupload']['name'])) {
+
+                    $path_to_directory = 'upload/files/';    	 // Soubor, kam pride PDF
+
+                    $filename = $_FILES['fupload']['name'];
+                    $datef=time(); 								// Ziskavame cas
+                    $file_pdf = $datef.$filename; 				// Menime jmeno souboru, abychom nemeli stejne jmeno
+                    $source = $_FILES['fupload']['tmp_name'];
+                    $target = $path_to_directory . $file_pdf;
+                    move_uploaded_file($source, $target);       //загрузка оригинала в папку $path_to_90_directory
+                    $options['file'] = $path_to_directory.$datef.$filename;
+                } else {
+                    $errors[] = 'Špatný format!';
+                }
+            }
 
             // znicime html tagy
             $options['nazev']  = strip_tags($options['nazev']);
@@ -85,7 +111,12 @@ class SeznamController
             $options['abstract'] = htmlspecialchars($options['abstract']);
 
             // ulozime zmeny
-            $result = Articles::updatePostById($id, $options);
+            if ($errors == false) {
+                // Pokud nevyskytly chyby -> pridani prispevku
+                $result = Articles::updatePostById($id, $options);
+            }
+
+
 
         }
 
@@ -112,6 +143,10 @@ class SeznamController
 
 
             // zapisujeme nazev, autory a abstrakt, ktere jsme dostali z formy, do promennych
+            $_SESSION['nazev'] = $_POST['nazev'];
+            $_SESSION['autori'] = $_POST['autori'];
+            $_SESSION['abstract'] = $_POST['abstract'];
+
             $options['nazev'] = $_POST['nazev'];
             $options['autori'] = $_POST['autori'];
             $options['abstract'] = $_POST['abstract'];
@@ -144,7 +179,8 @@ class SeznamController
 /////////////////////////////////UPLOAD PDF////////////////////////////////////////////////
 ///
             if (empty($_FILES['fupload']['name'])) {  // Pokud neni file
-                $options['file'] = "No file.";
+//                $options['file'] = "No file.";
+                $errors[] = 'Vložte prosím file!';
             }
             else {
                 if(preg_match('/[.](PDF)|(pdf)$/',$_FILES['fupload']['name'])) {
@@ -165,8 +201,16 @@ class SeznamController
 //////////////////////////////////////////////////////////////////////////////////////////
             if ($errors == false) {
                 // Pokud nevyskytly chyby -> pridani prispevku
-                $id = Articles::addAbstract($options);
-                header("Location: /seznam");
+                $result = Articles::addAbstract($options);
+            }
+            if (isset($_SESSION['nazev'])) {
+                unset($_SESSION['nazev']);
+            }
+            if (isset($_SESSION['autori'])) {
+                unset($_SESSION['autori']);
+            }
+            if (isset($_SESSION['abstract'])) {
+                unset($_SESSION['abstract']);
             }
         }
         require_once(ROOT . '/views/user/novy_pr.php');

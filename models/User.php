@@ -22,14 +22,13 @@ class User
      */
     public static function register($name, $email, $password)
     {
-        // Соединение с БД
+        // Pripojeni k DB
         $db = Db::getConnection();
 
-        // Текст запроса к БД
+        // SQL dotaz
         $sql = 'INSERT INTO users (username, email, password) '
             . 'VALUES (:name, :email, :password)';
 
-        // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':name', $name, PDO::PARAM_STR);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
@@ -212,14 +211,13 @@ class User
 
         // SQL dotaz
         $sql = "UPDATE `users` 
-                SET `username`= :name,`password`= :password,`email`= :email,`jmeno`= :jmeno,`organizace`= :organizace 
+                SET `username`= :name,`email`= :email,`jmeno`= :jmeno,`organizace`= :organizace 
                 WHERE idusers = :id;";
 
         // Prijem a vraceni vysledku
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':password', $options['password'], PDO::PARAM_STR);
         $result->bindParam(':email', $options['email'], PDO::PARAM_STR);
         $result->bindParam(':jmeno', $options['jmeno'], PDO::PARAM_STR);
         $result->bindParam(':organizace', $options['organizace'], PDO::PARAM_STR);
@@ -231,7 +229,7 @@ class User
      * @param $id   id uzivatele
      * @return bool vysledek
      */
-    public static function getUserBanById($id)
+    public static function getUserBanById($id, $options)
     {
         // Pripojeni k DB
         $db = Db::getConnection();

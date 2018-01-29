@@ -19,6 +19,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                 <div class="col-md-12">
 
                                         <h2>Seznam přispěvků</h2>
+                                        <div class="textq">Všechné recenzované příspěvky </div>
 
                                         <div class="form-group">
                                             <hr/>
@@ -29,21 +30,19 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                             <tr>
                                                 <th>Název</th>
                                                 <th>Autoři</th>
-                                                <th>Uživatel</th>
+                                                <th>Recenzent</th>
                                                 <th>Poznamka</th>
-<!--                                                <th>Hodnocen</th>-->
+                                                <th>Hodnocení</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <?php foreach ($list as $posts):
-                                                $user = User::getUserById($posts['uzivatel']);
-                                            ?>
+                                            <?php foreach ($list as $posts):?>
                                                 <tr>
-                                                    <td data-label="name"><?php echo $posts['name']; ?></td>
+                                                    <td data-label="name"><a href="info/<?php echo $posts['post_idpost'];?>"><?php echo $posts['name']; ?></a></td>
                                                     <td data-label="autors"><?php echo $posts['autors']; ?></td>
-                                                    <td data-label="uzivatel"><?php echo $user['username']; ?></td>
-                                                    <td data-label="poznamka"><?php echo $posts['poznamka']; ?></td>
-<!--                                                    <td data-label="poznamka">--><?php //echo $posts['celkem']; ?><!--</td>-->
+                                                    <td data-label="uzivatel"><?php echo $posts['username']; ?></td>
+                                                    <td data-label="poznamka"><?php echo mb_substr(strip_tags($posts['poznamka']), 0, 10, 'utf-8'); ?>...</td>
+                                                    <td data-label="celkem"><?php echo $posts['celkem']; ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                             </tbody>

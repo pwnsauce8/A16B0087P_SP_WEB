@@ -19,6 +19,7 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                 <div class="col-md-12">
                                         <form method="post" action="#" autocomplete="off">
                                             <h2>Příspěvek k posouzení.</h2>
+
                                             <?php $post = Articles::getPostById($id);?>
                                             <a href="download/<?php echo $post['idpost']; ?>"><i class="fa fa-download" aria-hidden="true"></i> Stáhnout příspěvek</a>
 

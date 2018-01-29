@@ -19,6 +19,8 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                 <div class="col-md-12">
                                         <h2>Seznam přispěvků</h2>
 
+                                        <div class="textq">Všechné nerecenzované příspěvky </div>
+
                                         <div class="form-group">
                                             <hr/>
                                         </div>

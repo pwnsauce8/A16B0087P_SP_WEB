@@ -62,3 +62,11 @@ $(document).ready(function() {
 	});
 
 });
+
+function win(){
+    x=prompt('Введите пароль:', 'Пароль');
+    if (x==pass)
+        document.write('Здравствуйте, <b>авторизированный</b> пользователь!');
+    else
+        document.write('Вы ввели неправильный пароль.');
+}

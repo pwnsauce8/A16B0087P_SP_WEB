@@ -22,7 +22,7 @@ class AdminController
         User::checkBan();
         // Kontroluje, zda uzivatel ma pristup
         Admin::checkAdmin();
-        require_once(ROOT . '/views/admin/index.php');
+        require_once(ROOT . '/views/admin/admin.php');
 
         return true;
     }
@@ -34,6 +34,7 @@ class AdminController
      */
     public function actionDownload($idPost)
     {
+
         // zjisti informace o zaznamu
         $result = Articles::getPostById($idPost);
         // zapise do $filename cestu k souboru
@@ -52,10 +53,29 @@ class AdminController
      */
     public function actionBan($id)
     {
+
         // Kontroluje, zda uzivatel ma pristup
         Admin::checkAdmin();
         // BAN
         Admin::banUser($id);
+
+        require_once(ROOT . '/views/admin/users.php');
+
+        return true;
+    }
+
+    /**
+     * Nastavi UNBAN na uzivatele
+     * @param $id
+     * @return bool
+     */
+    public function actionUnban($id)
+    {
+
+        // Kontroluje, zda uzivatel ma pristup
+        Admin::checkAdmin();
+        // BAN
+        Admin::unBanUser($id);
 
         require_once(ROOT . '/views/admin/users.php');
 

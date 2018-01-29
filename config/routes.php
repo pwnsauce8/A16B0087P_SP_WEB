@@ -35,6 +35,7 @@ return array(
 
     // Admin
 
+    'unbanuser/([0-9]+)' => 'admin/unban/$1',
     'admsez' => 'adminseznam/seznamprispevku',
     'novyadmin' => 'novyadmin/index',
     'download/([0-9]+)' => 'admin/download/$1',
@@ -44,6 +45,7 @@ return array(
     'admin/delete/([0-9]+)' => 'adminseznam/delete/$1',
     'admin' => 'admin/index',
     'posadm' => 'adminseznam/kposouzeni',
+    'seznam/info/([0-9]+)' => 'adminseznam/info/$1',
 
 
 

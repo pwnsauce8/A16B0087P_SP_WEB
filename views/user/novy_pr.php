@@ -20,9 +20,12 @@ include ROOT . '/views/layouts/header.php'; ?>
                                         <h2>Nový příspěvek.</h2>
                                     </div>
 
-                                        <?php if ($result): ?>
-                                            <span>Uspěch</span>
-                                        <?php else: ?>
+                                    <?php if ($result): ?>
+                                    <div class="alert alert-success alert-dismissable">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Success!</strong> Máte nový příspěvek
+                                    </div>
+                                    <?php endif; ?>
 
                                         <?php if (isset($errors) && is_array($errors)): ?>
                                         <div class="alert alert-info fade in alert-dismissable">
@@ -33,7 +36,7 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                 <?php endforeach; ?>
                                         </div>
                                         <?php endif; ?>
-                                        <?php endif; ?>
+
 
                                         <div class="form-group">
                                             <hr/>
@@ -52,13 +55,13 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <div class="input-group">
                                                 <i class="input-group-addon"><i class="glyphicon glyphicon-user"></i></i>
                                                 <input id="autori" name="autori" type="text" class="form-control"
-                                                       placeholder=" Autoři přispěvku" maxlength="200" value=""/>
+                                                       placeholder=" Autoři přispěvku" maxlength="200" value="">
                                             </div>
 
                                             <label for="textarea">Abstract: <span>***</span></label>
                                             <div class="input-group">
                                                 <i class="input-group-addon"><i class="fa fa-align-justify" aria-hidden="true"></i></i>
-                                                <textarea class="form-control" id="textarea" name="abstract" rows="8"> Max. 1500 symbolů</textarea>
+                                                <textarea class="form-control" id="textarea" name="abstract" rows="8"></textarea>
                                             </div>
 
                                             <label for="file">PDF soubor:<br></label>

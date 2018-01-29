@@ -462,3 +462,14 @@ select {
 	width: 87%;
 }
 
+.input-group-ja {
+	padding: 1px 1px;
+	width: 1%;
+	display: table-cell;
+}
+
+.col_one {
+	width: 203px;
+}
+
+

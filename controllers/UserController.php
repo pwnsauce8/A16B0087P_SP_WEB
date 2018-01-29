@@ -117,6 +117,7 @@ class UserController
     public function actionEditprofile()
     {
         $userId = User::checkLogged();
+        $result = false;
 
 
         if (isset($_POST['submit'])) {
@@ -147,6 +148,11 @@ class UserController
                 $errors[] = 'Jméno musí být délší, než 2 symboly';
             }
 
+
+            if ($errors == false) {
+                // Pokud nevyskytly chyby -> registrace
+                $result = User::updateUserById($userId, $options);
+            }
 
 
         }

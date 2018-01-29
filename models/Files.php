@@ -36,4 +36,25 @@ class Files
             exit;
         }
     }
+
+    public static function getFileNameById ($id) {
+
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $sql = 'SELECT `file` FROM `post` WHERE idpost = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Spusteni prikazu
+        $result->execute();
+
+        // Příjem a vracení výsledků
+        return $result->fetch();
+    }
+
 }

@@ -17,17 +17,17 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                     <div class="row">
                         <div class="text">
                             <div class="col-md-12">
-                                    <h2>Seznam uživatelů</h2>
+                                    <h2>Seznam všech uživatelů</h2>
 
                                     <div class="form-group">
                                         <hr/>
                                     </div>
-
                                     <table class="tg_user">
                                         <thead>
                                         <tr>
                                             <th>UserName</th>
                                             <th>Má ban</th>
+                                            <th></th>
                                             <th></th>
                                         </tr>
                                         </thead>
@@ -39,6 +39,9 @@ include ROOT . '/views/layouts/admin-header.php'; ?>
                                                 <td data-label="username"><?php echo $user['isBan'];?></td>
                                                 <td data-label="ban"><a href="/banuser/<?php echo $user['idusers'];?>"><i
                                                             class="fa fa-times" aria-hidden="true"></i> ban</a>
+                                                </td>
+                                                <td data-label="ban"><a href="/unbanuser/<?php echo $user['idusers'];?>"><i
+                                                                class="fa fa-times" aria-hidden="true"></i> unban</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

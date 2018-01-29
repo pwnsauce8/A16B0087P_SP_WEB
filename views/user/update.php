@@ -21,18 +21,27 @@ include ROOT . '/views/layouts/header.php'; ?>
                                                 $post = Articles::getPostById($id);
                                                 echo $post['name']; ?> </span></h2>
 
+                                        <?php if ($result): ?>
+                                            <div class="alert alert-success alert-dismissable">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                <strong>Success!</strong> Příspěvek byl upraven
+                                            </div>
+                                        <?php endif; ?>
+
                                         <?php if (isset($errors) && is_array($errors)): ?>
-                                            <ul style="margin-left: 0; padding-left: 0;">
+                                            <div class="alert alert-info fade in alert-dismissable">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+
                                                 <?php foreach ($errors as $error): ?>
-                                                    <li style="color: red; list-style-type: none; "> <?php echo $error?></li>
+                                                    <strong>Info!</strong> <?php echo $error ?> <br>
                                                 <?php endforeach; ?>
-                                            </ul>
+                                            </div>
                                         <?php endif; ?>
 
                                         <div class="form-group">
                                             <hr/>
                                         </div>
-                                        
+
 
                                         <form method="post" action="#" autocomplete="off" enctype="multipart/form-data">
 
@@ -40,20 +49,20 @@ include ROOT . '/views/layouts/header.php'; ?>
                                             <div class="input-group">
                                                 <i class="input-group-addon"><i class="fa fa-comment" aria-hidden="true"></i></i>
                                                 <input id="name" type="text" name="nazev" class="form-control"
-                                                       placeholder=" Název přispěvku" maxlength="50" value=" <?php echo $post['name']; ?>">
+                                                       placeholder=" Název přispěvku" maxlength="50" value="<?php echo $post['name']; ?>">
                                             </div>
 
                                             <label for="autori">Autoři: <span>***</span></label>
                                             <div class="input-group">
                                                 <i class="input-group-addon"><i class="glyphicon glyphicon-user"></i></i>
                                                 <input id="autori" name="autori" type="text" class="form-control"
-                                                       placeholder=" Autoři přispěvku" maxlength="200" value=" <?php echo $post['autors']; ?>">
+                                                       placeholder=" Autoři přispěvku" maxlength="200" value="<?php echo $post['autors']; ?>">
                                             </div>
 
                                             <label for="textarea">Abstract: <span>***</span></label>
                                             <div class="input-group">
                                                 <i class="input-group-addon"><i class="fa fa-align-justify" aria-hidden="true"></i></i>
-                                                <textarea class="form-control" id="textarea" name="abstract" rows="8" > <?php echo $post['abstract']; ?></textarea>
+                                                <textarea class="form-control" id="textarea" name="abstract" rows="8" ><?php echo $post['abstract']; ?></textarea>
                                             </div>
 
                                             <label for="file">PDF soubor:<br></label>

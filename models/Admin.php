@@ -43,6 +43,23 @@ class Admin
     }
 
     /**
+     * Nastavi na isBan '0' v tabulce users
+     * @return bool
+     */
+    public static function unBanUser($id) {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = "UPDATE `users` SET isBan = '0' WHERE idusers = :id;";
+
+        // Получение и возврат результатов. Используется подготовленный запрос
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    /**
      * Nastaveni posouzeni
      * @param $id
      * @param $options
@@ -87,5 +104,54 @@ class Admin
             $i++;
         }
         return $posList;
+    }
+
+    /**
+     * Vrati seznam prispevku
+     * @return array pole zaznamu
+     */
+    public static function getInfoVote() {
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        // SQL dotaz
+        $result = $db->query('SELECT post.name, post.posouzeni, post.autors, users.username, votes.poznamka, votes.celkem, votes.post_idpost FROM `votes`,`post`,`users` WHERE votes.post_idpost = post.idpost AND votes.uzivatel = users.idusers');
+        // Prijem a vraceni vysledku
+        $i = 0;
+        $voteInfo = array();
+        while ($row = $result->fetch()) {
+            $voteInfo[$i]['name'] = $row['name'];
+            $voteInfo[$i]['posouzeni'] = $row['posouzeni'];
+            $voteInfo[$i]['autors'] = $row['autors'];
+            $voteInfo[$i]['username'] = $row['username'];
+            $voteInfo[$i]['poznamka'] = $row['poznamka'];
+            $voteInfo[$i]['celkem'] = $row['celkem'];
+            $voteInfo[$i]['post_idpost'] = $row['post_idpost'];
+            $i++;
+        }
+        return $voteInfo;
+    }
+
+    public static function getVotesById($id) {
+
+        // Pripojeni k DB
+        $db = Db::getConnection();
+
+        $artList = array();
+
+        // SQL dotaz
+        $result = $db->prepare("SELECT originalita, tema, tech_kval, jaz_kval, doporuceni, poznamka, celkem, users.username FROM votes, users WHERE post_idpost = :id AND votes.uzivatel = users.idusers");
+
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Ukazujeme, ze chceme dostat pole s data
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $result->execute();
+        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $artList[] = $row;
+        }
+
+        return $artList;
     }
 }
