@@ -16,6 +16,8 @@
                     <div class="copyright">
                         <p> Mukanova Zhanel © 2017 <br>
                             Semestrální práce z WEB 2017 <a href="http://www.zcu.cz/">ZCU</a></p>
+                        <a href="/admin">admin</a>
+
                     </div>
                 </div>
             </div>
